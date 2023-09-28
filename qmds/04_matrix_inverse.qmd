@@ -1,0 +1,43 @@
+# 행렬과 연립방정식의 해 {#matrix_inverse}
+
+
+## 역행렬의 정의
+
+정방행렬 $\pmb A \in \RR^{n \times n}$의 역행렬(inverse metrix)이 존재하면 $\pmb A^{-1}$로 표시하며 다음을 만족하는 행렬이다.
+
+$$ \pmb A \pmb A^{-1} = \pmb A^{-1} \pmb A= \pmb I $$
+
+
+- 역행렬은 유일하다.
+
+- 예를 들어 2차원 정방행렬의 역행렬은 다음과 같이 계산할 수 있다.
+
+$$
+\pmb A =
+\begin{bmatrix}
+a & b \\
+c & d 
+\end{bmatrix}, ad-bc \ne 0
+\rightarrow
+{\pmb A}^{-1} = \frac{1}{ad-bc}
+\begin{bmatrix}
+d & -b \\
+-c & a 
+\end{bmatrix}
+$$
+
+위의 2차원 정방행렬의 역행렬에서 만약 $ad-bc =0$ 이면 역행렬이 존재하지 않는다.  일반적으로 모든 정방행렬의 역행렬이 존재하는 것은 아니다.
+
+## 중요한 내용과 정의
+
+- 역행렬의 성질
+
+$$ (\pmb A \pmb B)^{-1} = {\pmb B}^{-1} {\pmb A}^{-1} $$
+
+$$ (\pmb A^T)^{-1} = (\pmb A^{-1})^{T} $$
+
+- 연립방정식의 해 
+
+    $n$개의 $n$ 변수 일차연립방정식 $\pmb A \pmb x = \pmb y$가 주어졌다고 하자. 여기서 $\pmb A$는 $n \times n$ 정방행렬이다. 만약 $\pmb A^{-1}$가 존재하면
+
+    $$ \pmb x = \pmb A^{-1} \pmb y $$

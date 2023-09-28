@@ -1,0 +1,92 @@
+project:
+  type: book
+
+execute:
+  cache: false
+
+book:
+  title: "빅데이터분석를 위한 수학"
+  author: "이용희"
+  date: last-modified
+  repo-url: https://github.com/ilovedata/statmehods
+  downloads: [pdf]
+  chapters:
+    - index.qmd
+    - qmds/01_schedule.qmd
+    - qmds/02_matrix_intro.qmd
+    - qmds/03_matrix_compute.qmd
+    - qmds/04_matrix_inverse.qmd
+    - qmds/05_matrix_equation.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    lang: ko
+    language: custom.yml
+    code-fold: true
+    code-overflow: wrap
+    embed-resources: false
+    crossref:
+      fig-prefix: 그림   # (default is "Figure")
+      tbl-prefix: 표    # (default is "Table")
+      eq-prefix: 식     # (default is "Equation")
+      ref-hyperlink: true # (default is true)
+    include-in-header:
+      - text: |
+          <script type="text/javascript">
+           window.MathJax = {
+            tex: {
+              macros: {
+              RR: '{\\mathbb R}',                    // a simple string replacement
+              hatmat:'{\\pmb X ({\\pmb X}^t {\\pmb X} )^{-1} {\\pmb X}^t}',
+              bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
+              pardiff: ['\\frac{\\partial#2}{\\partial#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
+              pardifftwo: ['\\frac{\\partial#1}{\\partial#2}', 2]
+            },
+            environments: {
+            braced: ["\\left\\{", "\\right\\}"]
+            }
+           }
+          };
+          </script>
+#    include-before-body:
+#      - latex/preamble-mathjax.tex
+  # bookup-html:
+  #   toc: true
+  #   toc-depth: 2
+  #   language: custom.yml
+  #   code-fold: true
+  #   code-overflow: wrap
+  #   embed-resources: true
+  #   include-in-header:
+  #     - latex/preamble-mathjax.tex
+  # 
+  pdf:
+    documentclass: scrbook
+    papersize: A4
+    lang: ko
+    language: custom.yml
+    fontsize: 10pt
+    lof: true
+    lot: true
+    code-overflow: wrap
+    latex-auto-install: true
+    latex-tinytex: true
+    pdf-engine: xelatex
+    crossref:
+      fig-prefix: 그림   # (default is "Figure")
+      tbl-prefix: 표    # (default is "Table")
+      eq-prefix: 식     # (default is "Equation")
+      ref-hyperlink: true # (default is true)
+    include-in-header: latex/preamble.tex
+  # 
+  # docx:
+  #   reference-doc: report-01.docx
+  #   include-in-header:
+  #     - latex/preamble-mathjax.tex
+

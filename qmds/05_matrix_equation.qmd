@@ -1,0 +1,437 @@
+# 가우스소거법과 연립방정식의 해 {#matrix_equation}
+
+## 행렬의 기본연산
+
+###  일차연립방정식의 기본연산
+기본연산은 일차연립방정식의 해집합을 변화시키지 않으면서 방정식을 변화시켜 해집합을 구하는 다음의 세 가지 연산을 말한다.
+
+1. 한개의 방정식의 양변에 0이 아닌 상수를 곱하기
+2. 한개의 방정식의 양변에 0이 아닌 상수를 곱한 것을 다른방정식의 양변에 각각 더하기  3. 방정식의 위치를 바꾸기
+
+###  행렬의 기본 행연산
+기본 행연산(elementary row operation)은 기본연산을 행렬의 행에 시행하는 것을 말한다. 
+
+1. 한 행에 0이 아닌 상수를 곱하기
+2. 한 행에 0이 아닌 상수를 곱한 결과를 다른 행 에더하기
+3. 두 행의 위치를 교환하기
+
+::: {.callout-important}
+
+- 슬라이드의 1-7페이지를 반드시 먼저 학습하세요
+- 부교재 @math2020ml 의 2.3.1 Particular and General Solution 절을 반드시 학습하세요
+
+:::
+
+## 행렬과 벡터의 곱 {#sec-intro-product}
+
+$m \times n$ 인 행렬 $\pmb A$ 와 $n$-차원 벡터 $\pmb x$를 곱하는 과정을 다음과 같이 두 개의 서로 다른 형태로 나타낼 수 있다.
+
+### 행렬 계산법의 이용
+
+먼저 행렬과 벡터의 곱셈은 행렬 계산법의 이용하여 나타낼 수 있다.
+
+$$
+{\pmb A} {\pmb x}  = 
+\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots &    & \dots \\
+a_{m1} & a_{m2} & \dots & a_{mn} 
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n 
+\end{bmatrix} 
+=
+\begin{bmatrix}
+\sum_{l=1}^n a_{1l} x_l \\
+\sum_{l=1}^n a_{2l} x_l \\
+\vdots \\
+\sum_{l=1}^n a_{ml} x_l
+\end{bmatrix} \\
+$$
+
+### 열벡터의 선형조합
+
+이제 행렬과 벡터의 곱셈을 행렬 $\pmb A$을 구성하는 열벡터들의 선형조합(linear combination)으로 나타낼 수 있다.
+
+$$
+{\pmb A} {\pmb x} = 
+x_1
+\begin{bmatrix}
+a_{11} \\
+a_{21} \\
+\vdots \\
+a_{m1} 
+\end{bmatrix} 
++ 
+x_2 
+\begin{bmatrix}
+a_{12} \\
+a_{22} \\
+\vdots \\
+a_{m2} 
+\end{bmatrix} 
++ \cdots + 
+x_n 
+\begin{bmatrix}
+a_{1n} \\
+a_{2n} \\
+\vdots \\
+a_{mn} 
+\end{bmatrix}
+=
+x_1 {\pmb a}_1 + x_2 {\pmb a}_2 + \cdots + x_n {\pmb a}_n 
+$$
+
+위의 식에서 벡터 $\pmb a_j$ 는 행렬 $\pmb A$ 의 $j$ 번째 열벡터이다.
+
+::: {#exm-mat-vec-product}
+
+먼저 간단한 예제로 다음과 같은 행렬과 벡터의 곱셈을 생각해 보자.
+
+$$
+\pmb A =
+\begin{bmatrix}
+1 & 2 \\
+1 & -1 
+\end{bmatrix},
+\quad
+\pmb x =
+\begin{bmatrix}
+1 \\
+-1
+\end{bmatrix}
+$$
+
+행렬과 벡터의 곱셈은 앞에서 배운 행렬의 곱셈 방법으로 다음과 같이 나타낼 수 있다.
+
+$$
+\pmb A \pmb x =
+\begin{bmatrix}
+1 & 2 \\
+1 & -1 
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+-1
+\end{bmatrix}
+=
+\begin{bmatrix}
+(1)(1) + (2)(-1)  \\
+(1)(1) + (-1)(-1) 
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1 \\
+-2
+\end{bmatrix}
+$$
+
+이제 행렬과 벡터의 곱셈을  행렬 $\pmb A$ 의 열들의 선형 조합으로 표시할 수 있다는 것도 알아두자.
+
+$$
+\pmb A \pmb x =
+\begin{bmatrix}
+1 & 2 \\
+1 & -1 
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+-1
+\end{bmatrix}
+=(1)
+\begin{bmatrix}
+1 \\
+1
+\end{bmatrix}
++ (-1)
+\begin{bmatrix}
+2 \\
+-1
+\end{bmatrix}
+=
+\begin{bmatrix}
+-1 \\
+-2
+\end{bmatrix}
+$$
+
+행렬과 벡터의 곱셈을을 **앞 행렬의 열**과 **뒷 벡터의 원소**의 선형조합으로 나타낼 수 있다는 사실은 다양한 주제에서 유용하게 사용된다.
+
+:::
+
+
+
+## 방정식의 근이 무한개인 경우 
+
+교재 슬라이드 4번의 5-7 페이지에는 변수가 3개이고 방정식의 개수가 2개인 경우에 
+$$
+\begin{cases}
+x_1 - 2 x_2 + 2 x_3 = 6 \\
+x_2 -x_3 =2 
+\end{cases}
+~~\leftrightarrow~~
+\pmb A \pmb x = \pmb y
+~~\leftrightarrow~~
+\begin{bmatrix}
+1 & -2 & 2 \\
+0 & 1  & -1 
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \end{bmatrix}
+=
+\begin{bmatrix}
+6 \\
+2
+\end{bmatrix}
+$$ {#eq-exam-eq-1}
+
+아래와 같이 첨가행렬(augmented matrix)을 만들고 기본 행연산을 적용하여 일반해를 구하는 예제가 있다.
+
+$$
+\left[\begin{array}{ccc|c}
+1 & -2 & 2 & 6\\
+0 & 1  & -1 & 2
+\end{array}\right]
+$$
+
+
+
+### 매개변수를 이용하는 법 
+
+만약 슬라이드에 나오는 것처럼 매개변수($x_3=t$)를 방정식에 추가하여 첨가행렬의 왼쪽을 항등행렬로 바꾸는 행연산을 적용하면 다음과 같은 결과를 얻고
+
+$$
+\
+\left[\begin{array}{ccc|c}
+1 & 0 & 0 & 10\\
+0 & 1  & 0 & t+ 2 \\
+0 & 0 & 1 & t
+\end{array}\right]
+$$
+해집합은 다음과 같이 주어진다.
+
+$$
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 
+\end{bmatrix}
+= 
+\begin{bmatrix}
+10 \\
+t+2 \\
+t 
+\end{bmatrix}
+=
+t
+\begin{bmatrix}
+0 \\
+1 \\
+1 
+\end{bmatrix}
++ 
+\begin{bmatrix}
+10 \\
+2 \\
+0 
+\end{bmatrix}, \quad t \in \RR
+$$ {#eq-exam-eq-1-sol}
+
+### 특수해와 선형조합을 이용
+
+다시 @eq-exam-eq-1 에서 제시된 방정식을 열벡터의 선형조합의 형태로 아래와 같이 써보자
+
+$$
+\pmb A \pmb x = \pmb y
+~~\leftrightarrow~~
+x_1
+\begin{bmatrix}
+1  \\
+0  
+\end{bmatrix}
++
+x_2
+\begin{bmatrix}
+ -2  \\
+ 1   
+\end{bmatrix}
++ x_3
+\begin{bmatrix}
+ 2 \\
+-1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+6 \\
+2
+\end{bmatrix}
+$$ {#eq-exam-eq-linear}
+
+이제 위의 식에서 $x_3=0$ 으로 놓으면 다음과 같이 $x_1$ 과 $x_2$ 만 포함된 
+간단한 방정식이 나타나며 이를 만족하는 특수해(particular solution) $\pmb x^*$ 를 다음과 같이 구할 수 있다.
+
+$$
+x_3=0,~~
+x_1
+\begin{bmatrix}
+1  \\
+0  
+\end{bmatrix}
++
+x_2
+\begin{bmatrix}
+ -2  \\
+ 1   
+\end{bmatrix}
+=
+\begin{bmatrix}
+6 \\
+2
+\end{bmatrix}
+~ \rightarrow~~~
+\pmb x^* =
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \end{bmatrix}
+=
+\begin{bmatrix}
+10 \\
+2 \\
+0 \end{bmatrix}
+$$ {#eq-exam-eq-1-sol-2}
+
+위의 @eq-exam-eq-1-sol-2 에서 구한 특수해 $\pmb x^*$ 는 @eq-exam-eq-1-sol 에서 
+주어진 해집합에서 나타난 마지막 벡터이다.
+
+이제 @eq-exam-eq-1 에 주어진 방정식은 특별한 해 $\pmb x^*$ 만  만족하는 것이 아니므로 일반해(general solution)을 구해야 한다. 일반해를 구하는 방법은 다음과 같이 행렬 $\pmb A$의 열들의 선형 조합이 영벡터가 되는 $\pmb x^{**}$를 찾는 것이다.
+
+$$
+\pmb A \pmb x^{**} = \pmb 0
+\quad \leftrightarrow \quad 
+x_1
+\begin{bmatrix}
+1  \\
+0  
+\end{bmatrix}
++
+x_2
+\begin{bmatrix}
+ -2  \\
+ 1   
+\end{bmatrix}
++ x_3
+\begin{bmatrix}
+ 2 \\
+-1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+$$ {#eq-exam-eq-1-sol-3}
+
+@eq-exam-eq-1-sol-3 를 만족하는 해는 유일하지 않다. 하지만 행렬 $\pmb A$의 두 번째 열과 세 번째 열의 부호가 반대인 점을 이용하면 다음과 같은 식을 얻을 수 있다. 
+
+$$
+(0)
+\begin{bmatrix}
+1  \\
+0  
+\end{bmatrix}
++
+(1)
+\begin{bmatrix}
+ -2  \\
+ 1   
+\end{bmatrix}
++ (1)
+\begin{bmatrix}
+ 2 \\
+-1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}
+$$
+따라서  @eq-exam-eq-1-sol-3 를 만족하는 해 $\pmb x^{**}$ 는 쉽게 찾을 수 있다.
+
+$$ \pmb x^{**} =
+\begin{bmatrix}
+0 \\
+1 \\
+1 
+\end{bmatrix}
+$$
+
+이제  $\pmb A \pmb x^{*} = \pmb y$ 를 만족하는 특수해 $\pmb x^{*}$ 와 $\pmb A \pmb x^{**} = \pmb 0$ 를 만족하는 $\pmb x^{**}$ 를 이용하여 일반해를 구해보자. 임의의 실수 $t$ 에 대하여 다음과 같은 식이 만족한다.
+
+$$ \pmb A (\pmb x^* + t \pmb x^{**})  =
+\pmb A \pmb x^* + t \pmb A \pmb x^{**}
+= \pmb y + t \pmb 0 = \pmb y \quad  t \in \RR$$
+
+위의 식에 의하여 이제 일반해를 구하면 다음과 같이 나타나며 
+이는 매개변수를 이용하여 얻은 해(@eq-exam-eq-1-sol)와 동일하게 나타난다.
+
+$$
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 
+\end{bmatrix}
+= 
+\pmb x^* + t \pmb x^{**}
+=
+\begin{bmatrix}
+10 \\
+2 \\
+0 
+\end{bmatrix}+
+t
+\begin{bmatrix}
+0 \\
+1 \\
+1 
+\end{bmatrix},
+ \quad t \in \RR
+$$
+
+## 영공간과 일반해
+
+@eq-exam-eq-1-sol-3 에 나타난 것과 같이 주어진 행렬 $\pmb A$ 의 열들의 선형조합을 영벡터로 만드는 해의 집합을 영공간(Null space)라고 한다.
+
+
+::: {#def-nullspace}
+일차연립방정식(또는 행렬 방정식) $\pmb A \pmb x = \pmb 0$ 의 해집합을 $\pmb A$의 영공간이라고 하고 $N (\pmb A)$라고
+표시한다. 즉,
+
+$$ N( \pmb A)=\{ \pmb x: \pmb A \pmb x= \pmb 0 \}$$
+:::
+
+위에서 방정식의 해를 찾을 때 특수한 해를 먼저 찾고 일반해를 만드는 작업은 영공간을 찾는 작업과 동일하다.
+
+
+
+
+
+
+## 중요한 내용과 정의
+
+
+- 행사다리꼴 행렬(row echelon form)의 정의
+- 피벗(pivot 혹은 leading entry)의 정의 
+- 기약행사다리꼴(reduced row echelon form)의 정의 
+- 가우스 소거법의 절차
+  + 기본변수(basic variable)와 자유변수(free variable)
+  + 매개변수의 이용
+- 연립일차방정식이 유일한 해를 가질 조건 
+- 정방행렬의 역행령이 존재하면 영공간은 영벡터와 같다.
