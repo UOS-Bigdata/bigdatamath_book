@@ -3,6 +3,7 @@
 
 이 온라인 연습장은 **빅데이터분석를 위한 수학**의 강의 보충 노트와 연습문제를 모아 놓은 사이트입니다.
 
+- 온라인 연습 노트북의 주소는 [https://uos-bigdata.github.io/bigdatamath_book/](https://uos-bigdata.github.io/bigdatamath_book/) 입니다.
 
 - 이 연습장은 강의에 사용된 슬라이드와 부교재 Mathematics for Machine Learning 를 참고하였다. 
 
