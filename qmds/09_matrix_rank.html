@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>빅데이터분석를 위한 수학 - 4&nbsp; 행렬과 연립방정식의 해</title>
+<title>빅데이터분석를 위한 수학 - 9&nbsp; 행렬의 계수</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmds/05_matrix_equation.html" rel="next">
-<link href="../qmds/03_matrix_compute.html" rel="prev">
+<link href="../references.html" rel="next">
+<link href="../qmds/08_vector_space_base.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -84,8 +84,6 @@ ul.task-list li input[type="checkbox"] {
 };
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -98,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmds/04_matrix_inverse.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">행렬과 연립방정식의 해</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmds/09_matrix_rank.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">행렬의 계수</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -153,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmds/04_matrix_inverse.html" class="sidebar-item-text sidebar-link active">
+  <a href="../qmds/04_matrix_inverse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">행렬과 연립방정식의 해</span></span></a>
   </div>
 </li>
@@ -183,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmds/09_matrix_rank.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/09_matrix_rank.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">행렬의 계수</span></span></a>
   </div>
 </li>
@@ -199,21 +197,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">목차</h2>
-   
-  <ul class="collapse">
-  <li><a href="#역행렬의-정의" id="toc-역행렬의-정의" class="nav-link active" data-scroll-target="#역행렬의-정의"><span class="header-section-number">4.1</span> 역행렬의 정의</a></li>
-  <li><a href="#중요한-내용과-정의" id="toc-중요한-내용과-정의" class="nav-link" data-scroll-target="#중요한-내용과-정의"><span class="header-section-number">4.2</span> 중요한 내용과 정의</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="matrix_inverse" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">행렬과 연립방정식의 해</span></span></h1>
+<h1 class="title"><span id="matrix_rank" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">행렬의 계수</span></span></h1>
 </div>
 
 
@@ -230,44 +221,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="역행렬의-정의" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="역행렬의-정의"><span class="header-section-number">4.1</span> 역행렬의 정의</h2>
-<p>정방행렬 <span class="math inline">\(\pmb A \in \RR^{n \times n}\)</span>의 역행렬(inverse metrix)이 존재하면 <span class="math inline">\(\pmb A^{-1}\)</span>로 표시하며 다음을 만족하는 행렬이다.</p>
-<p><span class="math display">\[ \pmb A \pmb A^{-1} = \pmb A^{-1} \pmb A= \pmb I \]</span></p>
-<ul>
-<li><p>역행렬은 유일하다.</p></li>
-<li><p>예를 들어 2차원 정방행렬의 역행렬은 다음과 같이 계산할 수 있다.</p></li>
-</ul>
-<p><span id="eq-inverse-22"><span class="math display">\[
-\pmb A =
-\begin{bmatrix}
-a &amp; b \\
-c &amp; d
-\end{bmatrix}, ad-bc \ne 0
-\rightarrow
-{\pmb A}^{-1} = \frac{1}{ad-bc}
-\begin{bmatrix}
-d &amp; -b \\
--c &amp; a
-\end{bmatrix}
-\tag{4.1}\]</span></span></p>
-<p>위의 2차원 정방행렬의 역행렬에서 만약 <span class="math inline">\(ad-bc =0\)</span> 이면 역행렬이 존재하지 않는다. 일반적으로 모든 정방행렬의 역행렬이 존재하는 것은 아니다.</p>
-</section>
-<section id="중요한-내용과-정의" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="중요한-내용과-정의"><span class="header-section-number">4.2</span> 중요한 내용과 정의</h2>
-<ul>
-<li>역행렬의 성질</li>
-</ul>
-<p><span class="math display">\[ (\pmb A \pmb B)^{-1} = {\pmb B}^{-1} {\pmb A}^{-1} \]</span></p>
-<p><span class="math display">\[ (\pmb A^T)^{-1} = (\pmb A^{-1})^{T} \]</span></p>
-<ul>
-<li><p>연립방정식의 해</p>
-<p><span class="math inline">\(n\)</span>개의 <span class="math inline">\(n\)</span> 변수 일차연립방정식 <span class="math inline">\(\pmb A \pmb x = \pmb y\)</span>가 주어졌다고 하자. 여기서 <span class="math inline">\(\pmb A\)</span>는 <span class="math inline">\(n \times n\)</span> 정방행렬이다. 만약 <span class="math inline">\(\pmb A^{-1}\)</span>가 존재하면</p>
-<p><span class="math display">\[ \pmb x = \pmb A^{-1} \pmb y \]</span></p></li>
-</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+주의
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>행렬의 계수에 대한 강의자료 슬라이드(9번)은 나중에 학습합니다.</p>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -662,13 +630,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmds/03_matrix_compute.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">행렬의 연산</span></span>
+      <a href="../qmds/08_vector_space_base.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">벡터공간의 기저와 차원</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmds/05_matrix_equation.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">가우스소거법과 연립방정식의 해</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
