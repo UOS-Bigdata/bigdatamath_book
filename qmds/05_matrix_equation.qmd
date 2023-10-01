@@ -1,12 +1,24 @@
 # 가우스소거법과 연립방정식의 해 {#matrix_equation}
 
+
+::: {.callout-important}
+
+- 슬라이드의 1-7페이지를 반드시 먼저 학습하세요
+- 부교재 @math2020ml 의 다음 절을 반드시 학습하세요
+  + 2.3.1 Particular and General Solution 
+  + 2.3.2 Elementary Transformations
+  + 2.3.3 The Minus-1 Trick
+
+:::
+
 ## 행렬의 기본연산
 
 ###  일차연립방정식의 기본연산
 기본연산은 일차연립방정식의 해집합을 변화시키지 않으면서 방정식을 변화시켜 해집합을 구하는 다음의 세 가지 연산을 말한다.
 
 1. 한개의 방정식의 양변에 0이 아닌 상수를 곱하기
-2. 한개의 방정식의 양변에 0이 아닌 상수를 곱한 것을 다른방정식의 양변에 각각 더하기  3. 방정식의 위치를 바꾸기
+2. 한개의 방정식의 양변에 0이 아닌 상수를 곱한 것을 다른방정식의 양변에 각각 더하기  
+3. 방정식의 위치를 바꾸기
 
 ###  행렬의 기본 행연산
 기본 행연산(elementary row operation)은 기본연산을 행렬의 행에 시행하는 것을 말한다. 
@@ -15,18 +27,13 @@
 2. 한 행에 0이 아닌 상수를 곱한 결과를 다른 행 에더하기
 3. 두 행의 위치를 교환하기
 
-::: {.callout-important}
 
-- 슬라이드의 1-7페이지를 반드시 먼저 학습하세요
-- 부교재 @math2020ml 의 2.3.1 Particular and General Solution 절을 반드시 학습하세요
-
-:::
 
 ## 행렬과 벡터의 곱 {#sec-intro-product}
 
 $m \times n$ 인 행렬 $\pmb A$ 와 $n$-차원 벡터 $\pmb x$를 곱하는 과정을 다음과 같이 두 개의 서로 다른 형태로 나타낼 수 있다.
 
-### 행렬 계산법의 이용
+1. **행렬 계산법의 이용**
 
 먼저 행렬과 벡터의 곱셈은 행렬 계산법의 이용하여 나타낼 수 있다.
 
@@ -53,7 +60,7 @@ x_n
 \end{bmatrix} \\
 $$
 
-### 열벡터의 선형조합
+2. **열벡터의 선형조합**
 
 이제 행렬과 벡터의 곱셈을 행렬 $\pmb A$을 구성하는 열벡터들의 선형조합(linear combination)으로 나타낼 수 있다.
 
@@ -88,7 +95,7 @@ $$
 
 위의 식에서 벡터 $\pmb a_j$ 는 행렬 $\pmb A$ 의 $j$ 번째 열벡터이다.
 
-::: {#exm-mat-vec-product}
+::: {#exr-mat-vec-product}
 
 먼저 간단한 예제로 다음과 같은 행렬과 벡터의 곱셈을 생각해 보자.
 
@@ -161,6 +168,8 @@ $$
 
 행렬과 벡터의 곱셈을을 **앞 행렬의 열**과 **뒷 벡터의 원소**의 선형조합으로 나타낼 수 있다는 사실은 다양한 주제에서 유용하게 사용된다.
 
+$\blacksquare$
+
 :::
 
 
@@ -198,13 +207,23 @@ $$
 1 & -2 & 2 & 6\\
 0 & 1  & -1 & 2
 \end{array}\right]
+$$ {#eq-exam-eq-1-aug}
+
+위의 @eq-exam-eq-1-aug 에서 첨가행렬의 왼쪽 부분이 행사다리꼴 행렬(row echelon form)임을 유의하자. @eq-exam-eq-1-aug 의 두 번째 행에 2를 곱해서 첫번 째 행에 더하면 다음과 같이 
+기약행사다리꼴 행렬(reduced row echelon form)이 된다.
+
 $$
+\left[\begin{array}{ccc|c}
+1 & 0 & 0 & 10\\
+0 & 1  & -1 & 2
+\end{array}\right]
+$$ {#eq-exam-eq-1-aug2}
 
+이제 방정식을 푸는 3가지 방법에 대하여 알아보자.
 
+**(1) 매개변수와 가우스소거법를 이용하는 법** 
 
-### 매개변수를 이용하는 법 
-
-만약 슬라이드에 나오는 것처럼 매개변수($x_3=t$)를 방정식에 추가하여 첨가행렬의 왼쪽을 항등행렬로 바꾸는 행연산을 적용하면 다음과 같은 결과를 얻고
+슬라이드에 나오는 방법처럼 @eq-exam-eq-1-aug2 에 매개변수($x_3=t$)를 사용하기 위하여 첨가행렬의 마지막 행에 $(0,0,1,t)$를 추가한 후 첨가행렬의 왼쪽을 항등행렬로 바꾸는 행연산을 적용하면(가우스 소거법) 다음과 같은 결과를 얻고
 
 $$
 \
@@ -243,9 +262,9 @@ t
 \end{bmatrix}, \quad t \in \RR
 $$ {#eq-exam-eq-1-sol}
 
-### 특수해와 선형조합을 이용
+**(2) 특수해와 선형조합을 이용**
 
-다시 @eq-exam-eq-1 에서 제시된 방정식을 열벡터의 선형조합의 형태로 아래와 같이 써보자
+다시 @eq-exam-eq-1-aug2 에서 제시된 방정식을 열벡터의 선형조합의 형태로 아래와 같이 써보자
 
 $$
 \pmb A \pmb x = \pmb y
@@ -258,17 +277,17 @@ x_1
 +
 x_2
 \begin{bmatrix}
- -2  \\
+ 0  \\
  1   
 \end{bmatrix}
 + x_3
 \begin{bmatrix}
- 2 \\
+ 0 \\
 -1 
 \end{bmatrix}
 =
 \begin{bmatrix}
-6 \\
+10 \\
 2
 \end{bmatrix}
 $$ {#eq-exam-eq-linear}
@@ -286,12 +305,12 @@ x_1
 +
 x_2
 \begin{bmatrix}
- -2  \\
+ 0  \\
  1   
 \end{bmatrix}
 =
 \begin{bmatrix}
-6 \\
+10 \\
 2
 \end{bmatrix}
 ~ \rightarrow~~~
@@ -323,12 +342,12 @@ x_1
 +
 x_2
 \begin{bmatrix}
- -2  \\
+ 0  \\
  1   
 \end{bmatrix}
 + x_3
 \begin{bmatrix}
- 2 \\
+ 0 \\
 -1 
 \end{bmatrix}
 =
@@ -349,12 +368,12 @@ $$
 +
 (1)
 \begin{bmatrix}
- -2  \\
+ 0  \\
  1   
 \end{bmatrix}
 + (1)
 \begin{bmatrix}
- 2 \\
+ 0 \\
 -1 
 \end{bmatrix}
 =
@@ -403,6 +422,57 @@ t
 1 
 \end{bmatrix},
  \quad t \in \RR
+$$
+
+**(3) (-1)-추가법**
+
+이제 마지막 방법은 부교재 2.3.3 절(32 페이지)에 나온 (-1)-추가법(Minus-1 Trick)에 대하여 배워보자.
+
+@eq-exam-eq-1-aug2 는 기약행사다리꼴 행렬로서 첫 번째 행과 두 번째 행이 피봇을 포함한 행이다. 이제 기약행사다리꼴 행렬에 대각원소 위치에 피봇이 없는 행에 대각원소가 -1 인 행을 추가하여 정방행렬로 만들어 보자. @eq-exam-eq-1-aug2 에서 3행에 피봇이 없으므로 대각원소가 -1 이고 나머지가 0인 행을 3행에 다음과 같이 추가한다. 
+
+$$
+\left[\begin{array}{ccc|c}
+1 & 0 & 0 & 10\\
+0 & 1  & -1 & 2 \\
+\color{red}{0} &  \color{red}{0} & \color{red}{-1} & \color{red}{0} 
+\end{array}\right]
+$$ {#eq-exam-eq-1-minus1}
+
+이제 @eq-exam-eq-1-minus1 에서 가장 오른 쪽에 있는 열이 특수해가 되며 대각원소가 -1 은 열벡터가 $\pmb A \pmb x = \pmb 0$ 을 만족하는 해가 된다.
+
+따라서 방정식의 일반해를 다음과 같이 쓸수 있다. 
+
+$$
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 
+\end{bmatrix}
+=
+\begin{bmatrix}
+10 \\
+2 \\
+0 
+\end{bmatrix}+
+t^*
+\begin{bmatrix}
+0 \\
+-1 \\
+-1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+10 \\
+2 \\
+0 
+\end{bmatrix}+
+t
+\begin{bmatrix}
+0 \\
+1 \\
+1 
+\end{bmatrix},
+ \quad t=-t^*, ~~ t \in \RR
 $$
 
 ## 영공간과 일반해
