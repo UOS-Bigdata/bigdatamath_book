@@ -1,0 +1,225 @@
+# 행렬의 연산 {#matrix_compute}
+
+
+## 행렬의 덧셈과 스칼라곱
+
+### 덧셈
+
+두 행렬 $\pmb A$ 와 $\pmb B$ 를 더하는 규칙은 다음과 같다.
+
+- 두 행렬 $\pmb A$ 와 $\pmb B$ 는 행과 열의 갯수가 같아야 한다.
+- $\pmb A + \pmb B = \pmb C$ 라고 하면, 덧셈의 결과로 만들어진 행렬 $\pmb C$는 두 행렬과 같은 수의 행과 열을 가지면 각 원소는 다음과 같다.
+
+$$ \pmb A + \pmb B = \pmb C \quad \rightarrow \quad c_{ij} = a_{ij} + b_{ij} $$
+
+### 스칼라곱
+
+임의의 실수 $\lambda$ (스칼라)가 주어졌을 때, $\lambda$ 와 행렬 $\pmb A$의 스칼라곱(scalar product) 는 행렬의 모든 원소에 $\lambda$ 를 곱해준 행렬로 정의된다.
+
+예를 들어 $\lambda=2$, $\pmb A \in \RR^{2\times 3}$ 인 경우
+
+$$
+\lambda \pmb A = 
+2
+\begin{bmatrix}
+1 & 2 & 3 \\
+-1 & 0 & 2
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 & 4 & 6 \\
+-2 & 0 & 4
+\end{bmatrix}
+$$
+
+
+## 행렬의 곱셈
+
+
+
+먼저 두 행렬 $\pmb A$ 와 $\pmb B$ 의 곱셈 
+
+$$ \pmb A \times \pmb B \equiv \pmb A \pmb B $$  
+
+을 정의하려면 다음과 같은 조건이 만족되어야 한다. 
+
+- 행렬 $\pmb A$  의 열의 갯수와 행렬 $\pmb B$ 의 행의 갯수가 같아야 한다
+
+따라서 두 행렬의 곱셈은 순서를 바꾸면 정의 자체가 안될 수 있다.
+
+
+::: {#def-matrix-product}
+
+### 곱셈의 정의 
+이제 두 행렬 $\pmb A \in \RR^{m \times n}$ 와 $\pmb B \in \RR^{n \times k}$의 곱셈은 다음과 같이 정의된다.
+
+$$ \pmb A \pmb B =  \pmb C$$
+
+행렬 $\pmb C$ 는 $m$ 개의 행과 $k$개의 열로 구성된 행렬이며($\pmb C \in \RR^{m \times k}$) 각 원소 $c_{ij}$는 다음과 같이 정의된다.
+
+$$  c_{ij} = \sum_{l=1}^n a_{il} b_{lk}, \quad i=1,2,\dots,m; j=1,2,\dots,k $$
+
+:::
+
+먼저 간단한 예제로 다음과 같은 두 개의 행렬의 곱을 생각해 보자.
+
+$$
+\pmb A \pmb B =
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 
+\end{bmatrix}
+\begin{bmatrix}
+0 & 1 \\
+-1 & 2
+\end{bmatrix}
+=
+\begin{bmatrix}
+(1)(0) + (2)(-1) & (1)(1) + (2)(2) \\
+(3)(0) + (4)(-1) & (3)(1) + (4)(2)
+\end{bmatrix}
+=
+\begin{bmatrix}
+-2 & 5 \\
+-4 & 11
+\end{bmatrix}
+$$
+
+곱하는 순서를 바꾸어 계산해 보자.
+
+$$
+\pmb B \pmb A =
+\begin{bmatrix}
+0 & 1 \\
+-1 & 2
+\end{bmatrix}
+\begin{bmatrix}
+1 & 2 \\
+3 & 4 
+\end{bmatrix}
+=
+\begin{bmatrix}
+(0)(1) + (1)(-3) & (0)(2) + (1)(4) \\
+(-1)(1) + (2)(3) & (-1)(2) + (2)(4)
+\end{bmatrix}
+=
+\begin{bmatrix}
+-3 & 4 \\
+4 & 6
+\end{bmatrix}
+$$
+
+위 두 결과를 보면 행렬의 곱셈에서는 교환법칙이 성립하지 않음을 알 수 있다.
+
+이제 차원이 다른 두 행렬의 곱셈을 살펴보자.
+
+$$
+\pmb A =
+\begin{bmatrix}
+1 & 2 & 3\\
+3 & 2 & 1
+\end{bmatrix},
+\quad
+\pmb B =
+\begin{bmatrix}
+0 & 2 \\
+1 & -1 \\
+0 & 1
+\end{bmatrix}
+$$
+
+두 행렬의 곱셈은 @def-matrix-product 에 위하여 다음과 같이 계산할 수 있다.
+
+$$
+\pmb A \pmb B =
+\begin{bmatrix}
+1 & 2 & 3\\
+3 & 2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+0 & 2 \\
+1 & -1 \\
+0 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 & 3 \\
+2 & 5
+\end{bmatrix}
+$$
+
+두 행렬의 곱하는 순서를 바꾸면 차원이 전혀 다른 행렬이 얻어진다.
+
+
+$$
+\pmb B \pmb A =
+\begin{bmatrix}
+0 & 2 \\
+1 & -1 \\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 2 & 3\\
+3 & 2 & 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+6 & 4 & 2 \\
+-2 & 0 & 2 \\
+3 & 2 & 1
+\end{bmatrix}
+$$
+
+## 중요한 내용과 정의
+
+- 행렬의 전치(transpose operation): ${\pmb A}^T$
+
+- 행렬의 더하기와 스칼라곱의 성질
+
+
+- 행렬의 곱셈은 교환법칙이 성립하지 않는다.
+
+$$  \pmb A \pmb B \ne  \pmb B \pmb A$$   {#eq-product-not}
+
+
+::: {.callout-caution}
+**교환법칙이 성립하지 않는다**는 의미는 @eq-product-not 이 언제나 성립한다는 의미는 아니다. 아래와 같이 특별한 경우 교환법칙이 성립하는 경우도 있다.
+
+
+$$
+\begin{bmatrix}
+1 & 2 \\
+1 & 3 
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 2 \\
+1 & 3 
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 
+\end{bmatrix}
+\begin{bmatrix}
+1 & 2 \\
+1 & 3 
+\end{bmatrix}
+$$
+:::
+
+- 행렬의 곱셈은 결합법칙과 배분법칙은 성립한다.
+
+$$ (\pmb A \pmb B) \pmb C = \pmb A (\pmb B \pmb C) $$
+
+$$ (\pmb A + \pmb B) \pmb C = \pmb A \pmb C +  \pmb B \pmb C $$
+
+
+
+
+
+
