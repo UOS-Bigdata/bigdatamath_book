@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../references.html" rel="next">
+<link href="../qmds/10_linear_map.html" rel="next">
 <link href="../qmds/08_vector_space_base.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -78,6 +78,8 @@ ul.task-list li input[type="checkbox"] {
 };
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -181,6 +183,36 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../qmds/10_linear_map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">선형사상</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmds/11_linear_transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">선형사상의 변환행렬</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmds/12_linear_transform_basis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">기저변환과 변환행렬</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmds/13_linear_kernel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">선형변환의 핵과 상</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmds/14_affine.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">아핀공간</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -191,7 +223,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul class="collapse">
+  <li><a href="#계수의-정의" id="toc-계수의-정의" class="nav-link active" data-scroll-target="#계수의-정의"><span class="header-section-number">9.1</span> 계수의 정의</a></li>
+  <li><a href="#중요공식" id="toc-중요공식" class="nav-link" data-scroll-target="#중요공식"><span class="header-section-number">9.2</span> 중요공식</a></li>
+  <li><a href="#예제" id="toc-예제" class="nav-link" data-scroll-target="#예제"><span class="header-section-number">9.3</span> 예제</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -213,21 +253,250 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="계수의-정의" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="계수의-정의"><span class="header-section-number">9.1</span> 계수의 정의</h2>
+<div id="def-rank" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 9.1 (계수의 정의) </strong></span>행렬의 계수(rank)란 <strong>행렬의 일차 독립인 행들의 최대 수</strong> 또는 <strong>일차독립인 열들의 최대 수</strong>로 정의된다</p>
+<p><span class="math display">\[ rank(\pmb A) = rk(\pmb A) = dim(Col(\pmb A)) = dim(Row(\pmb A)) \]</span> <span class="math inline">\(\blacksquare\)</span></p>
 </div>
-<div class="callout-title-container flex-fill">
-주의
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>행렬의 계수에 대한 강의자료 슬라이드(9번)은 나중에 학습합니다.</p>
-</div>
-</div>
+<p>꼭 기억해야 할 것은 행렬의 계수는 열들을 이용하여 구한 계수와 행들을 이용하여 구한 계수가 같다는 것이다. 즉, 행렬의 계수는 열의 계수와 행의 계수 중 하나만 구해도 된다는 것이다.</p>
+</section>
+<section id="중요공식" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="중요공식"><span class="header-section-number">9.2</span> 중요공식</h2>
+<ul>
+<li><p><span class="math inline">\(rank(\pmb A ) = rank(\pmb A^T)\)</span></p></li>
+<li><p>행렬 <span class="math inline">\(\pmb A \in \RR^n\)</span> 가 정방행렬이고 계수가 <span class="math inline">\(n\)</span> 이면 역행렬이 존재한다. 약행렬이 존재하면 정칙행렬(non-sigular matrix)이라고 한다.</p></li>
+<li><p>더 나아가 다음에 나오는 문장은 모두 동치(equaivalent)이다.</p>
+<p>모든 <span class="math inline">\(\pmb A \in \RR^{n \times n}\)</span> 에 대하여</p>
+<p><span class="math inline">\(\pmb A\)</span> 가 정칙행렬이다.</p>
+<p><span class="math inline">\(\quad \Leftrightarrow\)</span> <span class="math inline">\(\pmb A\)</span> 의 열들이 일차독립이다.</p>
+<p><span class="math inline">\(\quad \Leftrightarrow\)</span> <span class="math inline">\(\pmb A\)</span> 의 행들이 일차독립이다.</p>
+<p><span class="math inline">\(\quad \Leftrightarrow\)</span> <span class="math inline">\(\pmb A\)</span> 의 계수가 <span class="math inline">\(n\)</span> 이다.</p>
+<p><span class="math inline">\(\quad \Leftrightarrow\)</span> <span class="math inline">\(\pmb A\)</span> 의 기약행사다리꼴행렬이 항등행렬이다.</p>
+<p><span class="math inline">\(\quad \Leftrightarrow\)</span> <span class="math inline">\(\pmb A \pmb x = \pmb 0\)</span> 해는 영벡터가 유일하다.</p></li>
+<li><p>최대계수행렬</p>
+<ul>
+<li><p><span class="math inline">\(\pmb A \in \RR^{n \times n}\)</span> 에 대하여 <span class="math inline">\(m \le n\)</span> 이고 <span class="math inline">\(rank(\pmb A) = m\)</span>이면 <span class="math inline">\(\pmb A\)</span> 는 최대 행계수를 갖는다. 이 때 <span class="math inline">\(\pmb A\)</span>를 최대 행계수 행렬(full row rank matrix)이라고한다.</p></li>
+<li><p><span class="math inline">\(\pmb A \in \RR^{n \times n}\)</span> 에 대하여 <span class="math inline">\(m \le n\)</span> 이고 <span class="math inline">\(m \ge n\)</span>이고 <span class="math inline">\(rank(\pmb A) = n\)</span> 이면 <span class="math inline">\(\pmb A\)</span>는 최대 열계수를 갖는다 A는 최대 열계수 행렬이다라고 한다.이 때 <span class="math inline">\(\pmb A\)</span>를 최대 열계수행렬((full column rank matrix)이라고 한다.</p></li>
+<li><p><span class="math inline">\(\pmb A\)</span> 가 최대 행계수 행렬 또는 최대 열계수 행렬인 경우 <span class="math inline">\(\pmb A\)</span> 는 최대 계수를 갖는다 또는 <span class="math inline">\(\pmb A\)</span> 는 최대 계수 행렬(full rank matrix) 이라고 한다.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="예제" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="예제"><span class="header-section-number">9.3</span> 예제</h2>
+<section id="부교재" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="부교재"><span class="header-section-number">9.3.1</span> 부교재</h3>
+<ul>
+<li>Example 2.18 (Rank)</li>
+</ul>
+</section>
+<section id="연습문제-1" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="연습문제-1"><span class="header-section-number">9.3.2</span> 연습문제 1</h3>
+<p>다음과 같은 <span class="math inline">\(3 \times 4\)</span> 행렬에 행연산을 적용하여 행사다리꼴 행렬로 만들어 보자.</p>
+<p><span id="eq-matrix-9-1"><span class="math display">\[
+\pmb A =
+\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; 5\\
+2 &amp; 5 &amp; 1 &amp; 14 \\
+4 &amp; 9 &amp; 3 &amp; 24
+\end{bmatrix}
+\tag{9.1}\]</span></span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;
+\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; 5\\
+2 &amp; 5 &amp; 1 &amp; 14 \\
+4 &amp; 9 &amp; 3 &amp; 24
+\end{bmatrix}
+\begin{array}{c}
+\\
+(-2)(\text{1st row}) + (\text{2nd row})
+\\
+\end{array} \\
+&amp; \\
+\rightarrow
+&amp;
+\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; 5\\
+0 &amp; 1 &amp; -1 &amp; 4 \\
+4 &amp; 9 &amp; 3 &amp; 24
+\end{bmatrix}
+\begin{array}{c}
+\\
+\\
+(-4)(\text{1st row}) + (\text{3rd row})
+\end{array} \\
+&amp; \\
+\rightarrow
+&amp;
+\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; 5\\
+0 &amp; 1 &amp; -1 &amp; 4 \\
+0 &amp; 1 &amp; -1 &amp; 4
+\end{bmatrix}
+\begin{array}{c}
+\\
+\\
+(-1) (\text{2nd row}) + (\text{3rd row})  
+\end{array} \\
+&amp; \\
+\rightarrow
+&amp;  
+\begin{bmatrix}
+1 &amp; 2 &amp; 1 &amp; 5\\
+0 &amp; 1 &amp; -1 &amp; 4 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+<p>위의 결과에서 피봇 행이 2개가 나타나며 나머지 행은 모두 0으로 나타난다. 이러한 결과를 행렬의 계수가 2인 것을 의미하며(<span class="math inline">\(rank(\pmb A)=2\)</span>). 계수의 정의에 의하여 선형독립인 행의 갯수가 2이다.</p>
+<p>따라서 마지막 행은 다른 2개의 행들의 선형조합이고 행연산의 결과로 모든 원소가 0이 되는 것을 알 수 있다.</p>
+<p>만약 <a href="#eq-matrix-9-1">식&nbsp;<span>9.1</span></a> 에 나타난 행렬의 열들을 고려하면 선형독립인 열들이 2개가 될까? <a href="#eq-matrix-9-1">식&nbsp;<span>9.1</span></a> 의 행렬 <span class="math inline">\(\pmb A\)</span> 의 전치 행렬은 열들이 행으로 바뀐 행렬이므로 위와 유사하게 행 연산을 적용하면 선향독립인 열의 개수를 구할 수 있다.</p>
+<p><span class="math display">\[
+\pmb A^T =
+\begin{bmatrix}
+1 &amp; 2 &amp; 4 \\
+2 &amp; 5 &amp; 9 \\
+1 &amp; 1 &amp; 3 \\
+5 &amp; 14 &amp; 24
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;
+\begin{bmatrix}
+1 &amp; 2 &amp; 4 \\
+2 &amp; 5 &amp; 9 \\
+1 &amp; 1 &amp; 3 \\
+5 &amp; 14 &amp; 24
+\end{bmatrix}
+\begin{array}{c}
+\\
+(\text{change 1st row and 3rd row})
+\\
+\end{array} \\
+\\
+\rightarrow &amp;
+\begin{bmatrix}
+1 &amp; 1 &amp; 3 \\
+2 &amp; 5 &amp; 9 \\
+1 &amp; 2 &amp; 4 \\
+5 &amp; 14 &amp; 24
+\end{bmatrix}
+\begin{array}{c}
+\\
+(-2)(\text{1st row}) + (\text{2nd row}) \\
+(-1)(\text{1st row}) + (\text{3rd row}) \\
+(-5)(\text{1st row}) + (\text{4th row})
+\end{array} \\
+\rightarrow &amp;
+\begin{bmatrix}
+1 &amp; 1 &amp; 3 \\
+0 &amp; 3 &amp; 3 \\
+0 &amp; 1 &amp; 1 \\
+0 &amp; 9 &amp; 9
+\end{bmatrix}
+\begin{array}{c}
+\\
+\\
+(\text{change 2nd row and 3rd row}) \\
+\\
+\end{array} \\
+\rightarrow &amp;
+\begin{bmatrix}
+1 &amp; 1 &amp; 3 \\
+0 &amp; 1 &amp; 1 \\
+0 &amp; 3 &amp; 3 \\
+0 &amp; 9 &amp; 9
+\end{bmatrix}
+\begin{array}{c}
+\\
+(-1)(\text{2nd row}) + (\text{3rd row}) \\
+(-3)(\text{2nd row}) + (\text{4th row})
+\\
+\end{array} \\
+\rightarrow &amp;
+\begin{bmatrix}
+1 &amp; 1 &amp; 3 \\
+0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0
+\end{bmatrix}
+\end{aligned}
+\]</span> 위와 같이 4개의 열로 보아도 서로 독립인 열의 개수는 2개임을 알 수 있다.</p>
+<p>따라서 행렬의 계수를 구하는 경우는 행을 이용한 연산과 열을 이용한 연산 중 하나만 선택하여 계산하면 된다.</p>
+<!----
+
+이제 교과서 87페이지에 나타난 행렬의 계수를 구해보자.
+\[ 
+\pmb A =
+\begin{bmatrix}[r]
+1 & 1 & 3\\
+1 & 1 & 3 \\
+4 & 4 & 12 \\
+2 & 2 & 5
+\end{bmatrix}
+\]
+
+행렬의 계수는 전치 행렬의 계수와 같으므로 ($r(\pmb A) = r(\pmb A^t)$) 전치행렬을 고려해도 무방하다.
+
+\[ 
+\pmb A^t =
+\begin{bmatrix}[r]
+1 & 1 & 4 & 2\\
+1 & 1 & 4 & 2 \\
+3 & 3 & 12 & 5
+\end{bmatrix}
+\]
+
+행(열)의 교환은 기본치환행렬을 행렬의 앞(뒤)에 곱하는 것과 같다. 정칙행렬을 앞 또는 뒤에 곱해도 행렬의 계수가 변하지 않으므로 행렬의 두 행(또는 열)을 교환하여도 행렬의 계수는 변하지 않는다
+
+이제 $\pmb A^t$의 2행과 3행을 바꾸고 다시 2열과 4열을 바꾸어 보자.
+
+\[
+\pmb E_{23} \pmb A^t \pmb E_{24} =
+\begin{bmatrix}[r]
+1 & 2 & 4 & 1\\
+3 & 5 & 12 & 3 \\
+1 & 2 & 4 & 1 
+\end{bmatrix}
+\]
+
+위의 행렬에 대각원소 아래를 0으로 바꾸는 행연산을 적용해 보자.
+
+\begin{aligned}
+\pmb E_{23} \pmb A^t \pmb E_{24} =
+\begin{bmatrix}[r]
+1 & 2 & 4 & 1\\
+3 & 5 & 12 & 3 \\
+1 & 2 & 4 & 1 
+\end{bmatrix}
+&
+\\
+(-3)(\text{1st row}) + (\text{2nd row}) \rightarrow&
+\begin{bmatrix}[r]
+1 & 2 & 4 & 1\\
+0 & -1 & 0 & 0 \\
+1 & 2 & 4 & 1 
+\end{bmatrix}
+\\
+ (-1)(\text{1st row}) + (\text{3rd row}) \rightarrow&
+\begin{bmatrix}[r]
+\tikzmarkin{c3}(0.1,-0.1)(-0.1,0.35) 1 \tikzmarkend{c3}& 2 & 4 & 1\\
+0 & \tikzmarkin{c4}(0.1,-0.1)(-0.1,0.35)-1 \tikzmarkend{c4}& 0 & 0 \\
+0 & 0 & 0 & 0 
+\end{bmatrix}
+\end{aligned}
+
+위의 결과에서 3개의 대각 원소 중에서 0이 아닌 대각원소가 2개가 나타나며 나머지 행은 모두 0으로 나타난다. 이러한 결과를 행렬의 계수가 2인 것을 의미한다. 
 
 
+--->
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -470,8 +739,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../qmds/10_linear_map.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">선형사상</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -11,7 +11,7 @@
     "href": "qmds/01_schedule.html#강의-진도",
     "title": "1  강의 일정과 내용",
     "section": "1.1 강의 진도",
-    "text": "1.1 강의 진도\n\n1주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n2\n행렬의 도입\n2-9, 13-17\n\n\n\n3\n행렬의 연산\n1-3, 6-7, 9-12\n\n\n\n\n\n2주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n4\n역행렬과 연립방정식의 해\n1-5\n\n\n\n5\n가우스소거법과 연립방정식의 해\n1-21\n27-32 페이지\n\n\n6\n행연산 행렬과 역행렬\n\n33-34 페이지\n\n\n\n\n3주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n7\n벡터공간\n6-10\n37-40 페이지\n\n\n8\n벡터공간의 기저와 차원\n1-15\n40-47 페이지\n\n\n9\n행렬의 계수"
+    "text": "1.1 강의 진도\n\n1주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n2\n행렬의 도입\n2-9, 13-17\n\n\n\n3\n행렬의 연산\n1-3, 6-7, 9-12\n\n\n\n\n\n2주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n4\n역행렬과 연립방정식의 해\n1-5\n\n\n\n5\n가우스소거법과 연립방정식의 해\n1-21\n27-32 페이지\n\n\n6\n행연산 행렬과 역행렬\n\n33-34 페이지\n\n\n\n\n3주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n7\n벡터공간\n6-10\n37-40 페이지\n\n\n8\n벡터공간의 기저와 차원\n1-15\n40-47 페이지\n\n\n9\n행렬의 계수\n4, 7\n47-48 페이지\n\n\n\n\n4주차\n추석연휴\n5주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n10\n선형사상\n1,2,4,5,6,7\n48-49 페이지\n\n\n11\n선형사상\n\n50- 53 페이지\n\n\n12\n기저변환과 변환행렬\n\n\n\n\n13\n선형변환의 핵과 상\n1-2\n58-60 페이지\n\n\n14\n아핀공간"
   },
   {
     "objectID": "qmds/02_matrix_intro.html#일차연립방정식",
@@ -154,11 +154,67 @@
     "text": "8.3 중요한 내용과 정의\n\n\\(\\RR^n\\) 의 모든 기저는 \\(n\\)개의 원소를 갖는다.\n임의의 벡터공간 \\(V\\)에 대해서 \\(V\\)의 부분집합 \\(B = \\{\\pmb b_1,\\dots,\\pmb b_n\\}\\) 가 \\(V\\)의 한 기저라고 하면 다음을 보일 수 있다.\n\n\\(V\\) 의 모든 벡터들은 \\(\\pmb b_1,\\dots,\\pmb b_n\\) 의 일차결합으로 나타낼 수 있으며 유일하다.\n\\(V\\) 의 부분집합이 \\(n\\) 개보다 많은 벡터를 포함하면 이 부분집합의 벡터들은 일차종속이다.\n\\(V\\) 의또다른기저 \\(C=\\{\\pmb c_1,\\dots,\\pmb c_m \\}\\) 가있다면\\(m=n\\) 이다.\n\n벡터공간 \\(V\\)의 차원(dimension) 은 기저의 개수로 정의되며 \\(dim(V)\\)로 표시한다."
   },
   {
-    "objectID": "qmds/09_matrix_rank.html",
-    "href": "qmds/09_matrix_rank.html",
+    "objectID": "qmds/09_matrix_rank.html#계수의-정의",
+    "href": "qmds/09_matrix_rank.html#계수의-정의",
     "title": "9  행렬의 계수",
+    "section": "9.1 계수의 정의",
+    "text": "9.1 계수의 정의\n\n정의 9.1 (계수의 정의) 행렬의 계수(rank)란 행렬의 일차 독립인 행들의 최대 수 또는 일차독립인 열들의 최대 수로 정의된다\n\\[ rank(\\pmb A) = rk(\\pmb A) = dim(Col(\\pmb A)) = dim(Row(\\pmb A)) \\] \\(\\blacksquare\\)\n\n꼭 기억해야 할 것은 행렬의 계수는 열들을 이용하여 구한 계수와 행들을 이용하여 구한 계수가 같다는 것이다. 즉, 행렬의 계수는 열의 계수와 행의 계수 중 하나만 구해도 된다는 것이다."
+  },
+  {
+    "objectID": "qmds/09_matrix_rank.html#중요공식",
+    "href": "qmds/09_matrix_rank.html#중요공식",
+    "title": "9  행렬의 계수",
+    "section": "9.2 중요공식",
+    "text": "9.2 중요공식\n\n\\(rank(\\pmb A ) = rank(\\pmb A^T)\\)\n행렬 \\(\\pmb A \\in \\RR^n\\) 가 정방행렬이고 계수가 \\(n\\) 이면 역행렬이 존재한다. 약행렬이 존재하면 정칙행렬(non-sigular matrix)이라고 한다.\n더 나아가 다음에 나오는 문장은 모두 동치(equaivalent)이다.\n모든 \\(\\pmb A \\in \\RR^{n \\times n}\\) 에 대하여\n\\(\\pmb A\\) 가 정칙행렬이다.\n\\(\\quad \\Leftrightarrow\\) \\(\\pmb A\\) 의 열들이 일차독립이다.\n\\(\\quad \\Leftrightarrow\\) \\(\\pmb A\\) 의 행들이 일차독립이다.\n\\(\\quad \\Leftrightarrow\\) \\(\\pmb A\\) 의 계수가 \\(n\\) 이다.\n\\(\\quad \\Leftrightarrow\\) \\(\\pmb A\\) 의 기약행사다리꼴행렬이 항등행렬이다.\n\\(\\quad \\Leftrightarrow\\) \\(\\pmb A \\pmb x = \\pmb 0\\) 해는 영벡터가 유일하다.\n최대계수행렬\n\n\\(\\pmb A \\in \\RR^{n \\times n}\\) 에 대하여 \\(m \\le n\\) 이고 \\(rank(\\pmb A) = m\\)이면 \\(\\pmb A\\) 는 최대 행계수를 갖는다. 이 때 \\(\\pmb A\\)를 최대 행계수 행렬(full row rank matrix)이라고한다.\n\\(\\pmb A \\in \\RR^{n \\times n}\\) 에 대하여 \\(m \\le n\\) 이고 \\(m \\ge n\\)이고 \\(rank(\\pmb A) = n\\) 이면 \\(\\pmb A\\)는 최대 열계수를 갖는다 A는 최대 열계수 행렬이다라고 한다.이 때 \\(\\pmb A\\)를 최대 열계수행렬((full column rank matrix)이라고 한다.\n\\(\\pmb A\\) 가 최대 행계수 행렬 또는 최대 열계수 행렬인 경우 \\(\\pmb A\\) 는 최대 계수를 갖는다 또는 \\(\\pmb A\\) 는 최대 계수 행렬(full rank matrix) 이라고 한다."
+  },
+  {
+    "objectID": "qmds/09_matrix_rank.html#예제",
+    "href": "qmds/09_matrix_rank.html#예제",
+    "title": "9  행렬의 계수",
+    "section": "9.3 예제",
+    "text": "9.3 예제\n\n9.3.1 부교재\n\nExample 2.18 (Rank)\n\n\n\n9.3.2 연습문제 1\n다음과 같은 \\(3 \\times 4\\) 행렬에 행연산을 적용하여 행사다리꼴 행렬로 만들어 보자.\n\\[\n\\pmb A =\n\\begin{bmatrix}\n1 & 2 & 1 & 5\\\\\n2 & 5 & 1 & 14 \\\\\n4 & 9 & 3 & 24\n\\end{bmatrix}\n\\tag{9.1}\\]\n\\[\n\\begin{aligned}\n&\n\\begin{bmatrix}\n1 & 2 & 1 & 5\\\\\n2 & 5 & 1 & 14 \\\\\n4 & 9 & 3 & 24\n\\end{bmatrix}\n\\begin{array}{c}\n\\\\\n(-2)(\\text{1st row}) + (\\text{2nd row})\n\\\\\n\\end{array} \\\\\n& \\\\\n\\rightarrow\n&\n\\begin{bmatrix}\n1 & 2 & 1 & 5\\\\\n0 & 1 & -1 & 4 \\\\\n4 & 9 & 3 & 24\n\\end{bmatrix}\n\\begin{array}{c}\n\\\\\n\\\\\n(-4)(\\text{1st row}) + (\\text{3rd row})\n\\end{array} \\\\\n& \\\\\n\\rightarrow\n&\n\\begin{bmatrix}\n1 & 2 & 1 & 5\\\\\n0 & 1 & -1 & 4 \\\\\n0 & 1 & -1 & 4\n\\end{bmatrix}\n\\begin{array}{c}\n\\\\\n\\\\\n(-1) (\\text{2nd row}) + (\\text{3rd row})  \n\\end{array} \\\\\n& \\\\\n\\rightarrow\n&  \n\\begin{bmatrix}\n1 & 2 & 1 & 5\\\\\n0 & 1 & -1 & 4 \\\\\n0 & 0 & 0 & 0\n\\end{bmatrix}\n\\end{aligned}\n\\]\n위의 결과에서 피봇 행이 2개가 나타나며 나머지 행은 모두 0으로 나타난다. 이러한 결과를 행렬의 계수가 2인 것을 의미하며(\\(rank(\\pmb A)=2\\)). 계수의 정의에 의하여 선형독립인 행의 갯수가 2이다.\n따라서 마지막 행은 다른 2개의 행들의 선형조합이고 행연산의 결과로 모든 원소가 0이 되는 것을 알 수 있다.\n만약 식 9.1 에 나타난 행렬의 열들을 고려하면 선형독립인 열들이 2개가 될까? 식 9.1 의 행렬 \\(\\pmb A\\) 의 전치 행렬은 열들이 행으로 바뀐 행렬이므로 위와 유사하게 행 연산을 적용하면 선향독립인 열의 개수를 구할 수 있다.\n\\[\n\\pmb A^T =\n\\begin{bmatrix}\n1 & 2 & 4 \\\\\n2 & 5 & 9 \\\\\n1 & 1 & 3 \\\\\n5 & 14 & 24\n\\end{bmatrix}\n\\]\n\\[\n\\begin{aligned}\n&\n\\begin{bmatrix}\n1 & 2 & 4 \\\\\n2 & 5 & 9 \\\\\n1 & 1 & 3 \\\\\n5 & 14 & 24\n\\end{bmatrix}\n\\begin{array}{c}\n\\\\\n(\\text{change 1st row and 3rd row})\n\\\\\n\\end{array} \\\\\n\\\\\n\\rightarrow &\n\\begin{bmatrix}\n1 & 1 & 3 \\\\\n2 & 5 & 9 \\\\\n1 & 2 & 4 \\\\\n5 & 14 & 24\n\\end{bmatrix}\n\\begin{array}{c}\n\\\\\n(-2)(\\text{1st row}) + (\\text{2nd row}) \\\\\n(-1)(\\text{1st row}) + (\\text{3rd row}) \\\\\n(-5)(\\text{1st row}) + (\\text{4th row})\n\\end{array} \\\\\n\\rightarrow &\n\\begin{bmatrix}\n1 & 1 & 3 \\\\\n0 & 3 & 3 \\\\\n0 & 1 & 1 \\\\\n0 & 9 & 9\n\\end{bmatrix}\n\\begin{array}{c}\n\\\\\n\\\\\n(\\text{change 2nd row and 3rd row}) \\\\\n\\\\\n\\end{array} \\\\\n\\rightarrow &\n\\begin{bmatrix}\n1 & 1 & 3 \\\\\n0 & 1 & 1 \\\\\n0 & 3 & 3 \\\\\n0 & 9 & 9\n\\end{bmatrix}\n\\begin{array}{c}\n\\\\\n(-1)(\\text{2nd row}) + (\\text{3rd row}) \\\\\n(-3)(\\text{2nd row}) + (\\text{4th row})\n\\\\\n\\end{array} \\\\\n\\rightarrow &\n\\begin{bmatrix}\n1 & 1 & 3 \\\\\n0 & 1 & 1 \\\\\n0 & 0 & 0 \\\\\n0 & 0 & 0\n\\end{bmatrix}\n\\end{aligned}\n\\] 위와 같이 4개의 열로 보아도 서로 독립인 열의 개수는 2개임을 알 수 있다.\n따라서 행렬의 계수를 구하는 경우는 행을 이용한 연산과 열을 이용한 연산 중 하나만 선택하여 계산하면 된다."
+  },
+  {
+    "objectID": "qmds/10_linear_map.html#선형사상",
+    "href": "qmds/10_linear_map.html#선형사상",
+    "title": "10  선형사상",
+    "section": "10.1 선형사상",
+    "text": "10.1 선형사상\n\\(V\\) 와 \\(W\\) 가 벡터공간일 때 함수 \\(T :V \\rightarrow W\\) 가 다음 두 가지 조건을 만족하면 선형사상(linear mapping, linear transformation, homomorphism)이라고 한다.\n\\[\n\\begin{aligned}\n(1) & \\quad \\forall v_1, v_2 \\in V, \\quad T(v_1 + v_2) = T(v_1) + T(v_2) \\\\\n(2) & \\quad \\forall r \\in \\RR, \\quad T(rv_1) = r T(v_1)\n\\end{aligned}\n\\]\n\n선형사상의 종류와 성질\n\n다음에 나오는 특별한 성질을 가진 선형사상과 특별한 함수의 정의를 반드시 학습하고 암기하세요\n\nInjective(단사함수, one-to-one)\nSurjective(전사함수, onto)\nBijective(전단사함수, one-to-one correspondence)\n항등함수(\\(id_V\\))\n역함수\n\n다음과 같은 용어는 참고로 알아두자.\n\nIsomorphism (동형사상): \\(T : V \\rightarrow W\\) linear and bijective\nAutomorphism (자기동형사상): \\(T : V \\rightarrow V\\) linear and bijective\n\n\n정리 10.1 () 한 벡터공간 \\(V\\) 가 있어서 \\(dim(V)=n\\) 이면 동형사상 \\(f :V \\rightarrow \\RR^n\\) 이있다.\n\\(\\blacksquare\\)"
+  },
+  {
+    "objectID": "qmds/11_linear_transform.html#좌표",
+    "href": "qmds/11_linear_transform.html#좌표",
+    "title": "11  선형사상의 변환행렬",
+    "section": "11.1 좌표",
+    "text": "11.1 좌표\n벡터공간 \\(V\\) 의 차원이 \\(dim(V)=n\\) 이고 주어진 기저를 \\(B = (\\pmb b_1, \\pmb b_2, \\dots, \\pmb b_n)\\) 이라고 하자. 참고로 기저 \\(B\\) 는 순서가 있는 집합(oerdered set)이다.\n벡터공간 \\(V\\) 의 원소 \\(\\pmb x \\in V\\) 는 다음과 같이 기저 \\(B\\) 의 선형조합으로 나타난다,\n\\[ \\pmb x = \\alpha_1 \\pmb b_1 + \\alpha_2 \\pmb b_2 + \\dots + \\alpha_n \\pmb b_n  \\tag{11.1}\\]\n참고로 \\(\\pmb x\\)를 식 11.1 과 같이 나타낼 수 있는 \\(\\alpha_1,\\alpha_2,\\dots,\\alpha_n\\) 의 조합은 유일하다.\n\n정의 11.1 (좌표(coordinator)) 벡터공간 \\(V\\) 의 원소 \\(\\pmb x \\in V\\) 가 기저 \\(B\\) 에 대하여 식 11.1 으로 표현된다면 \\(\\alpha_1,\\alpha_2,\\dots,\\alpha_n\\) 를 \\(\\pmb x\\) 의 좌표(coordinator) 라고 부른다.\n또한 벡터공간 \\(V\\) 의 모든 원소에 대하여 좌표를 대응해주는 좌표사상(coordinator map) 라고 부르고 다음과 같이 함수 \\(f: V \\rightarrow \\RR^n\\) 로 나타낼 수 있다.\n\\[ f(\\pmb x) = \\pmb \\alpha =\n\\begin{bmatrix}\n\\alpha_1 \\\\\n\\alpha_2 \\\\\n\\vdots \\\\\n\\alpha_n\n\\end{bmatrix}\n\\]\n\\(\\blacksquare\\)\n\n\n11.1.1 예제 (부교재 Example 2.20)\n이차원 벡터공간 \\(V = \\RR^2\\) 에서 다음과 같은 하나의 벡터를 생각하자.\n\\[\n\\pmb x =\n\\begin{bmatrix}\n2 \\\\\n3\n\\end{bmatrix}\n\\]\n이제 다음과 같은 표준 기저(standard basis) \\(B = (\\pmb e_1, \\pmb e_2)\\) 를 생각하자.\n\\[ B=  (\\pmb e_1, \\pmb e_2) =\n\\left (\n\\begin{bmatrix}\n1 \\\\\n0\n\\end{bmatrix}\n,\n\\begin{bmatrix}\n0 \\\\\n1\n\\end{bmatrix}\n\\right )\n= \\pmb I\n\\]\n이제 \\(\\pmb x\\) 를 기저 \\(B\\) 에 대하여 식 11.1 으로 표현하면 다음과 같다.\n\\[\n\\pmb x\n=\\begin{bmatrix}\n2 \\\\\n3\n\\end{bmatrix}\n= 2 \\pmb e_1 + 3 \\pmb e_2\n= 2\n\\begin{bmatrix}\n1 \\\\\n0\n\\end{bmatrix}\n+ 3\n\\begin{bmatrix}\n0 \\\\\n1\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n1 & 0\\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n2 \\\\\n3\n\\end{bmatrix}\n=\\pmb B \\pmb \\alpha_B\n\\tag{11.2}\\]\n따라서 기저 \\(B\\) 에 대하여 \\(\\pmb x\\) 의 좌표 \\(\\pmb \\alpha\\)는 다음과 같다.\n\\[\n\\pmb \\alpha \\equiv \\pmb \\alpha_B =\n\\begin{bmatrix}\n2 \\\\\n3\n\\end{bmatrix}\n\\]\n이제 기저를 다음과 같이 \\(\\tilde B\\) 로 바꾸어 보자.\n\\[ \\tilde B=  (\\pmb b_1, \\pmb b_2) =\n\\left (\n\\begin{bmatrix}\n1 \\\\\n-1\n\\end{bmatrix}\n,\n\\begin{bmatrix}\n1 \\\\\n1\n\\end{bmatrix}\n\\right )\n\\]\n이제 \\(\\pmb x\\) 를 기저 \\(\\tilde B\\) 에 대하여 식 11.1 으로 표현하면 다음과 같다.\n\\[\n\\pmb x =\n\\begin{bmatrix}\n2 \\\\\n3\n\\end{bmatrix}\n= (-1/2) \\pmb b_1 + (5/2) \\pmb b_2\n= (-\\frac{1}{2})\n\\begin{bmatrix}\n1 \\\\\n-1\n\\end{bmatrix}\n+ (\\frac{5}{2})\n\\begin{bmatrix}\n1 \\\\\n1\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n1 & 1\\\\\n-1 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n-1/2 \\\\\n5/2\n\\end{bmatrix}\n= \\tilde {\\pmb B}  \\pmb \\alpha_{\\tilde B}\n\\tag{11.3}\\]\n따라서 기저 \\(\\tilde B\\) 에 대하여 \\(\\pmb x\\) 의 좌표 \\(\\pmb \\alpha\\)는 다음과 같다.\n\\[\n\\pmb \\alpha \\equiv \\pmb \\alpha_{\\tilde B} =\n\\begin{bmatrix}\n-\\frac{1}{2} \\\\\n5\n\\end{bmatrix}\n\\]\n\n\n\n기저의 변화에 대한 죄표의 변화\n\n\n이 예제에서 본 것처럼 기저가 변하면 동일한 원소에 대해서도 좌표가 달라진다.\n만약 기저가 변했다면 좌표는 어떻게 변하는지를 알아야 한다. 이차원 공간의 임의의 벡터 \\(\\pmb x\\) 에 대하여 두 기저 \\(B\\) 와 \\(\\tilde B\\) 에 대하여 식 11.2 과 식 11.3 의 관계를 이용하면 다음과 같은 식을 얻을 수 있다.\n\\[\n\\begin{aligned}\n& \\quad \\tilde {\\pmb B}  \\pmb \\alpha_{\\tilde B} = \\pmb B \\pmb \\alpha_B  \\\\\n\\Rightarrow  & \\quad  \\pmb \\alpha_{\\tilde B}  = \\tilde {\\pmb B}^{-1} \\pmb B  \\pmb \\alpha_B  \\\\\n\\Rightarrow &  \\quad \\tilde {\\pmb B}  \\pmb \\alpha_{\\tilde B}  =\\tilde {\\pmb B}^{-1} \\pmb I \\pmb \\alpha_B  \\\\\n\\Rightarrow &  \\quad \\tilde {\\pmb B}  \\pmb \\alpha_{\\tilde B}  =\\tilde {\\pmb B}^{-1} \\pmb \\alpha_B  \\\\\n\\Rightarrow  & \\quad   \\pmb \\alpha_{\\tilde B}  =\n\\begin{bmatrix}\n1 & 1 \\\\\n-1 & 1\n\\end{bmatrix}^{-1}\n\\pmb \\alpha_B  \\\\\n\\Rightarrow  & \\quad \\pmb \\alpha_{\\tilde B} =\n\\begin{bmatrix}\n1/2 & -1/2 \\\\\n1/2 & 1/2\n\\end{bmatrix}\n\\pmb \\alpha_B\n\\end{aligned}\n\\] 따라서 기저가 변하면 좌표는 위와 같은 식으로 변한다."
+  },
+  {
+    "objectID": "qmds/11_linear_transform.html#변환행렬",
+    "href": "qmds/11_linear_transform.html#변환행렬",
+    "title": "11  선형사상의 변환행렬",
+    "section": "11.2 변환행렬",
+    "text": "11.2 변환행렬\n\n11.2.1 정의\n이제 두 개의 벡터공간 \\(V\\) 와 \\(W\\) 에 대하여 선형사상 \\(\\Phi\\) 가 정의되어 있고\n\\[ \\Phi : V \\rightarrow W \\]\n벡터공간 \\(V\\) 와 \\(W\\) 에 대한 기저가 각각 \\(B=(\\pmb b_1, \\pmb b_2, \\dots, \\pmb b_n)\\) 와 \\(C = (\\pmb c_1, \\pmb c_2, \\cdots, \\pmb c_m)\\) 이라고 하자.\n이제 벡터공간 \\(V\\) 의 기저에 대한 선향사상의 원소가 벡터공간 \\(W\\) 의 기저로 다음과 같이 표현된다고 하자.\n\\[\n\\begin{aligned}\n\\Phi(\\pmb b_1) &= a_{11} \\pmb c_1 + a_{21} \\pmb c_2 + \\cdots + a_{m1} \\pmb c_m \\\\\n\\Phi(\\pmb b_2) &= a_{12} \\pmb c_1 + a_{22} \\pmb c_2 + \\cdots + a_{m2} \\pmb c_m \\\\\n\\cdots \\\\\n\\Phi(\\pmb b_n) &= a_{1n} \\pmb c_1 + a_{2n} \\pmb c_2 + \\cdots + a_{mn} \\pmb c_m \\\\\n\\end{aligned}\n\\tag{11.4}\\]\n식 11.4 에서 나타난 계수 \\(a_{ij}\\) 을 \\(m \\times n\\)-행렬 \\(\\pmb A_{\\Phi}\\) 로 다음과 같이 표현할 수 있다.\n\\[\n\\pmb A_{\\Phi} =\n\\begin{bmatrix}\na_{11} & a_{12} & \\cdots & a_{1n} \\\\\na_{21} & a_{22} & \\cdots & a_{2n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m1} & a_{m2} & \\cdots & a_{mn} \\\\\n\\end{bmatrix}\n\\tag{11.5}\\]\n식 11.4 에 나타난 행렬 \\(\\pmb A_{\\Phi}\\) 를 변환행렬(transformation matrix)이라고 부르며 이 변환행렬은 각 벡터공간의 기저 \\(B\\) 와 \\(C\\)에 따라 정의되는 것에 유의하자.\n\n\n11.2.2 좌표와 변환행렬\n만약 \\(\\hat {\\pmb x}\\) 가 벡터공간 \\(V\\) 에서 기저 \\(B\\) 에 대한 원소 \\(\\pmb x\\)의 좌표이고\n\\[ \\pmb x = \\pmb B \\hat {\\pmb x} \\]\n\\(\\hat {\\pmb y}\\) 가 벡터공간 \\(W\\) 에서 기저 \\(C\\) 에 대한 선형사상 \\(\\pmb y = \\Phi(\\pmb x)\\)의 좌표이면\n\\[ \\pmb y = \\pmb C \\hat {\\pmb y} \\]\n두 좌표 \\(\\hat {\\pmb x}\\) 와 \\(\\hat {\\pmb y}\\) 사이의 관계는 다음과 같다.\n\\[ \\hat {\\pmb y} = \\pmb A_{\\Phi} \\hat {\\pmb x}  \\tag{11.6}\\]\n참고로 \\(\\RR^n\\) 에서 \\(\\RR^m\\) 으로의 선형사상 \\(\\Phi: \\RR^n \\rightarrow \\RR^m\\) 를 생각하고 각 공간의 기저를 표준 기저(standard basis)로 고려하면 변환행렬 \\(\\pmb A_{\\Phi}\\) 는 선형사상 \\(\\pmb y = \\Phi(\\pmb x )\\) 을 나타내는 \\(m \\times n\\) 행렬이다.\n\\[ \\pmb y = \\pmb A_{\\Phi} \\pmb x  \\tag{11.7}\\]\n\n\n11.2.3 예제\n\n부교재 Example 2.21 (Transformation Matrix) 참조\n부교재 Example 2.22 (Linear Transformations of Vectors) 참조"
+  },
+  {
+    "objectID": "qmds/12_linear_transform_basis.html",
+    "href": "qmds/12_linear_transform_basis.html",
+    "title": "12  기저변환과 변환행렬",
     "section": "",
-    "text": "주의\n\n\n\n행렬의 계수에 대한 강의자료 슬라이드(9번)은 나중에 학습합니다."
+    "text": "노트\n\n\n\n강의 슬라이드 12번 기저변환과 변환행렬의 주제는 추후에 강의합니다."
+  },
+  {
+    "objectID": "qmds/13_linear_kernel.html#핵과-상의-정의",
+    "href": "qmds/13_linear_kernel.html#핵과-상의-정의",
+    "title": "13  선형변환의 핵과 상",
+    "section": "13.1 핵과 상의 정의",
+    "text": "13.1 핵과 상의 정의\n\n정의 13.1 (선형변환의 핵과 상) 벡터공간 \\(V\\), \\(W\\) 사이의 선형사상 \\(T :V \\rightarrow W\\)를 고려하자. 선형사상 \\(T\\) 의핵(kernel) \\(Ker(T)\\) 또는 영공간(null space) \\(N (T )\\) 는 다음과 같이 정의된다:\n\\[ ker(T) = N (T ) = \\{ \\pmb v \\in V \\mid T( \\pmb v) = \\pmb 0 \\} \\]\n또한 선형사상 \\(T\\) 의 상(range) 또는 치역(image) \\(Im(T)\\) 는 다음과 같이 정의된다:\n\\[ Im(T) = T(V) = \\{ T(\\pmb v) \\mid \\in V \\} \\]\n\n\n\n\n\n선형변환의 핵과 상\n\n\n\n\n13.1.1 예제\n\n부교재 Example 2.25 (Image and Kernel of a Linear Mapping)"
+  },
+  {
+    "objectID": "qmds/14_affine.html",
+    "href": "qmds/14_affine.html",
+    "title": "14  아핀공간",
+    "section": "",
+    "text": "노트\n\n\n\n강의 슬라이드 14번 아핀공간의 주제는 추후에 강의합니다."
   },
   {
     "objectID": "references.html",

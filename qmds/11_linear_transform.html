@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="이용희">
 
-<title>빅데이터분석를 위한 수학</title>
+<title>빅데이터분석를 위한 수학 - 11&nbsp; 선형사상의 변환행렬</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,45 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./qmds/01_schedule.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../qmds/12_linear_transform_basis.html" rel="next">
+<link href="../qmds/10_linear_map.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -111,7 +92,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">서론</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmds/11_linear_transform.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">선형사상의 변환행렬</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -126,10 +107,10 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">빅데이터분석를 위한 수학</a> 
+      <a href="../">빅데이터분석를 위한 수학</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/ilovedata/statmehods" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./빅데이터분석를-위한-수학.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="../빅데이터분석를-위한-수학.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -142,97 +123,97 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">서론</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/01_schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/01_schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">강의 일정과 내용</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/02_matrix_intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/02_matrix_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">행렬의 도입</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/03_matrix_compute.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/03_matrix_compute.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">행렬의 연산</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/04_matrix_inverse.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/04_matrix_inverse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">행렬과 연립방정식의 해</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/05_matrix_equation.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/05_matrix_equation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">가우스소거법과 연립방정식의 해</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/06_matrix_inverse_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/06_matrix_inverse_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">행연산 행렬과 역행렬</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/07_vector_space.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/07_vector_space.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">벡터공간</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/08_vector_space_base.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/08_vector_space_base.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">벡터공간의 기저와 차원</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/09_matrix_rank.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/09_matrix_rank.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">행렬의 계수</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/10_linear_map.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/10_linear_map.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">선형사상</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/11_linear_transform.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/11_linear_transform.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">선형사상의 변환행렬</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/12_linear_transform_basis.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/12_linear_transform_basis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">기저변환과 변환행렬</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/13_linear_kernel.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/13_linear_kernel.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">선형변환의 핵과 상</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/14_affine.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/14_affine.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">아핀공간</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -246,7 +227,8 @@ div.csl-indent {
     <h2 id="toc-title">목차</h2>
    
   <ul class="collapse">
-  <li><a href="#서론" id="toc-서론" class="nav-link active" data-scroll-target="#서론">서론</a></li>
+  <li><a href="#좌표" id="toc-좌표" class="nav-link active" data-scroll-target="#좌표"><span class="header-section-number">11.1</span> 좌표</a></li>
+  <li><a href="#변환행렬" id="toc-변환행렬" class="nav-link" data-scroll-target="#변환행렬"><span class="header-section-number">11.2</span> 변환행렬</a></li>
   </ul>
 </nav>
     </div>
@@ -255,26 +237,14 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">빅데이터분석를 위한 수학</h1>
+<h1 class="title"><span id="linear_transform" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">선형사상의 변환행렬</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">저자</div>
-    <div class="quarto-title-meta-contents">
-             <p>이용희 </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">공개</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2023년 10월 10일</p>
-    </div>
-  </div>
   
     
   </div>
@@ -282,17 +252,6 @@ div.csl-indent {
 
 </header>
 
-<section id="서론" class="level1 unnumbered">
-<h1 class="unnumbered">서론</h1>
-<p>이 온라인 연습장은 <strong>빅데이터분석를 위한 수학</strong>의 강의 보충 노트와 연습문제를 모아 놓은 사이트입니다.</p>
-<ul>
-<li><p>이 연습장은 강의에 사용된 슬라이드와 부교재 <span class="citation" data-cites="math2020ml">Deisenroth, Faisal, 와/과 Ong (<a href="references.html#ref-math2020ml" role="doc-biblioref">2020</a>)</span> 를 참고하였다.</p>
-<ul>
-<li>강의에 사용된 슬라이드는 서울시립대학교 온라인 강의실에서 다운로드 받을 수 있다.</li>
-<li>강의에 사용된 부교재는 <a href="https://mml-book.github.io/">교과서 웹사이트</a>에서 다운로드 받을 수 있다.</li>
-</ul></li>
-<li><p>이 교재의 각 장에서는 강의에 사용된 슬라이드에서 배운 내용을 보충 설명하고 반드시 학습해야 할 주요 주제를 설명한다.</p></li>
-</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -303,20 +262,224 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>아래 열거된 사이트는 선형 변환을 시각적으로 설명하는 도구를 제공한다.</p>
 <ul>
-<li><p>이 연습장의 각 장(chapter)의 내용은 강의에 사용된 슬라이드 번호의 내용과 일치합니다.</p></li>
-<li><p>이 연습장에서 벡터와 행렬은 각각 <span class="math inline">\(\pmb x\)</span>, <span class="math inline">\(\pmb A\)</span> 와 같이 볼드체로 표기하며 하나의 숫자를 나타내는 변수는 보통의 서체 <span class="math inline">\(x\)</span> 로 표기한다.</p></li>
-<li><p>정의, 정리, 예제 등이 끝나는 표시는 <span class="math inline">\(\blacksquare\)</span> 로 나타낸다.</p></li>
+<li><a href="https://www.geogebra.org/m/pDU4peV5">그림의 변환</a></li>
+<li><a href="https://bossmaths.com/matrices-4/#4a">2차원 좌표의 변환</a></li>
+<li><a href="https://bossmaths.com/matrices-8/">3차원 좌표의 변환</a></li>
 </ul>
 </div>
 </div>
+<section id="좌표" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="좌표"><span class="header-section-number">11.1</span> 좌표</h2>
+<p>벡터공간 <span class="math inline">\(V\)</span> 의 차원이 <span class="math inline">\(dim(V)=n\)</span> 이고 주어진 기저를 <span class="math inline">\(B = (\pmb b_1, \pmb b_2, \dots, \pmb b_n)\)</span> 이라고 하자. 참고로 기저 <span class="math inline">\(B\)</span> 는 순서가 있는 집합(oerdered set)이다.</p>
+<p>벡터공간 <span class="math inline">\(V\)</span> 의 원소 <span class="math inline">\(\pmb x \in V\)</span> 는 다음과 같이 기저 <span class="math inline">\(B\)</span> 의 선형조합으로 나타난다,</p>
+<p><span id="eq-coordi-def"><span class="math display">\[ \pmb x = \alpha_1 \pmb b_1 + \alpha_2 \pmb b_2 + \dots + \alpha_n \pmb b_n  \tag{11.1}\]</span></span></p>
+<p>참고로 <span class="math inline">\(\pmb x\)</span>를 <a href="#eq-coordi-def">식&nbsp;<span>11.1</span></a> 과 같이 나타낼 수 있는 <span class="math inline">\(\alpha_1,\alpha_2,\dots,\alpha_n\)</span> 의 조합은 유일하다.</p>
+<div id="def-coordi" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 11.1 (좌표(coordinator)) </strong></span>벡터공간 <span class="math inline">\(V\)</span> 의 원소 <span class="math inline">\(\pmb x \in V\)</span> 가 기저 <span class="math inline">\(B\)</span> 에 대하여 <a href="#eq-coordi-def">식&nbsp;<span>11.1</span></a> 으로 표현된다면 <span class="math inline">\(\alpha_1,\alpha_2,\dots,\alpha_n\)</span> 를 <span class="math inline">\(\pmb x\)</span> 의 좌표(coordinator) 라고 부른다.</p>
+<p>또한 벡터공간 <span class="math inline">\(V\)</span> 의 모든 원소에 대하여 좌표를 대응해주는 좌표사상(coordinator map) 라고 부르고 다음과 같이 함수 <span class="math inline">\(f: V \rightarrow \RR^n\)</span> 로 나타낼 수 있다.</p>
+<p><span class="math display">\[ f(\pmb x) = \pmb \alpha =
+\begin{bmatrix}
+\alpha_1 \\
+\alpha_2 \\
+\vdots \\
+\alpha_n
+\end{bmatrix}
+\]</span></p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<section id="예제-부교재-example-2.20" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="예제-부교재-example-2.20"><span class="header-section-number">11.1.1</span> 예제 (부교재 Example 2.20)</h3>
+<p>이차원 벡터공간 <span class="math inline">\(V = \RR^2\)</span> 에서 다음과 같은 하나의 벡터를 생각하자.</p>
+<p><span class="math display">\[
+\pmb x =
+\begin{bmatrix}
+2 \\
+3
+\end{bmatrix}
+\]</span></p>
+<p>이제 다음과 같은 표준 기저(standard basis) <span class="math inline">\(B = (\pmb e_1, \pmb e_2)\)</span> 를 생각하자.</p>
+<p><span class="math display">\[ B=  (\pmb e_1, \pmb e_2) =
+\left (
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+,
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\right )
+= \pmb I
+\]</span></p>
+<p>이제 <span class="math inline">\(\pmb x\)</span> 를 기저 <span class="math inline">\(B\)</span> 에 대하여 <a href="#eq-coordi-def">식&nbsp;<span>11.1</span></a> 으로 표현하면 다음과 같다.</p>
+<p><span id="eq-coordi-ex1"><span class="math display">\[
+\pmb x
+=\begin{bmatrix}
+2 \\
+3
+\end{bmatrix}
+= 2 \pmb e_1 + 3 \pmb e_2
+= 2
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
++ 3
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 &amp; 0\\
+0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+2 \\
+3
+\end{bmatrix}
+=\pmb B \pmb \alpha_B
+\tag{11.2}\]</span></span></p>
+<p>따라서 기저 <span class="math inline">\(B\)</span> 에 대하여 <span class="math inline">\(\pmb x\)</span> 의 좌표 <span class="math inline">\(\pmb \alpha\)</span>는 다음과 같다.</p>
+<p><span class="math display">\[
+\pmb \alpha \equiv \pmb \alpha_B =
+\begin{bmatrix}
+2 \\
+3
+\end{bmatrix}
+\]</span></p>
+<p>이제 기저를 다음과 같이 <span class="math inline">\(\tilde B\)</span> 로 바꾸어 보자.</p>
+<p><span class="math display">\[ \tilde B=  (\pmb b_1, \pmb b_2) =
+\left (
+\begin{bmatrix}
+1 \\
+-1
+\end{bmatrix}
+,
+\begin{bmatrix}
+1 \\
+1
+\end{bmatrix}
+\right )
+\]</span></p>
+<p>이제 <span class="math inline">\(\pmb x\)</span> 를 기저 <span class="math inline">\(\tilde B\)</span> 에 대하여 <a href="#eq-coordi-def">식&nbsp;<span>11.1</span></a> 으로 표현하면 다음과 같다.</p>
+<p><span id="eq-coordi-ex2"><span class="math display">\[
+\pmb x =
+\begin{bmatrix}
+2 \\
+3
+\end{bmatrix}
+= (-1/2) \pmb b_1 + (5/2) \pmb b_2
+= (-\frac{1}{2})
+\begin{bmatrix}
+1 \\
+-1
+\end{bmatrix}
++ (\frac{5}{2})
+\begin{bmatrix}
+1 \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 &amp; 1\\
+-1 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+-1/2 \\
+5/2
+\end{bmatrix}
+= \tilde {\pmb B}  \pmb \alpha_{\tilde B}
+\tag{11.3}\]</span></span></p>
+<p>따라서 기저 <span class="math inline">\(\tilde B\)</span> 에 대하여 <span class="math inline">\(\pmb x\)</span> 의 좌표 <span class="math inline">\(\pmb \alpha\)</span>는 다음과 같다.</p>
+<p><span class="math display">\[
+\pmb \alpha \equiv \pmb \alpha_{\tilde B} =
+\begin{bmatrix}
+-\frac{1}{2} \\
+5
+\end{bmatrix}
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/coordinate.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">기저의 변화에 대한 죄표의 변화</figcaption>
+</figure>
+</div>
+<p>이 예제에서 본 것처럼 기저가 변하면 동일한 원소에 대해서도 좌표가 달라진다.</p>
+<p>만약 기저가 변했다면 좌표는 어떻게 변하는지를 알아야 한다. 이차원 공간의 임의의 벡터 <span class="math inline">\(\pmb x\)</span> 에 대하여 두 기저 <span class="math inline">\(B\)</span> 와 <span class="math inline">\(\tilde B\)</span> 에 대하여 <a href="#eq-coordi-ex1">식&nbsp;<span>11.2</span></a> 과 <a href="#eq-coordi-ex2">식&nbsp;<span>11.3</span></a> 의 관계를 이용하면 다음과 같은 식을 얻을 수 있다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \quad \tilde {\pmb B}  \pmb \alpha_{\tilde B} = \pmb B \pmb \alpha_B  \\
+\Rightarrow  &amp; \quad  \pmb \alpha_{\tilde B}  = \tilde {\pmb B}^{-1} \pmb B  \pmb \alpha_B  \\
+\Rightarrow &amp;  \quad \tilde {\pmb B}  \pmb \alpha_{\tilde B}  =\tilde {\pmb B}^{-1} \pmb I \pmb \alpha_B  \\
+\Rightarrow &amp;  \quad \tilde {\pmb B}  \pmb \alpha_{\tilde B}  =\tilde {\pmb B}^{-1} \pmb \alpha_B  \\
+\Rightarrow  &amp; \quad   \pmb \alpha_{\tilde B}  =
+\begin{bmatrix}
+1 &amp; 1 \\
+-1 &amp; 1
+\end{bmatrix}^{-1}
+\pmb \alpha_B  \\
+\Rightarrow  &amp; \quad \pmb \alpha_{\tilde B} =
+\begin{bmatrix}
+1/2 &amp; -1/2 \\
+1/2 &amp; 1/2
+\end{bmatrix}
+\pmb \alpha_B
+\end{aligned}
+\]</span> 따라서 기저가 변하면 좌표는 위와 같은 식으로 변한다.</p>
+</section>
+</section>
+<section id="변환행렬" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="변환행렬"><span class="header-section-number">11.2</span> 변환행렬</h2>
+<section id="정의" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="정의"><span class="header-section-number">11.2.1</span> 정의</h3>
+<p>이제 두 개의 벡터공간 <span class="math inline">\(V\)</span> 와 <span class="math inline">\(W\)</span> 에 대하여 선형사상 <span class="math inline">\(\Phi\)</span> 가 정의되어 있고</p>
+<p><span class="math display">\[ \Phi : V \rightarrow W \]</span></p>
+<p>벡터공간 <span class="math inline">\(V\)</span> 와 <span class="math inline">\(W\)</span> 에 대한 기저가 각각 <span class="math inline">\(B=(\pmb b_1, \pmb b_2, \dots, \pmb b_n)\)</span> 와 <span class="math inline">\(C = (\pmb c_1, \pmb c_2, \cdots, \pmb c_m)\)</span> 이라고 하자.</p>
+<p>이제 벡터공간 <span class="math inline">\(V\)</span> 의 기저에 대한 선향사상의 원소가 벡터공간 <span class="math inline">\(W\)</span> 의 기저로 다음과 같이 표현된다고 하자.</p>
+<p><span id="eq-coordi-trans1"><span class="math display">\[
+\begin{aligned}
+\Phi(\pmb b_1) &amp;= a_{11} \pmb c_1 + a_{21} \pmb c_2 + \cdots + a_{m1} \pmb c_m \\
+\Phi(\pmb b_2) &amp;= a_{12} \pmb c_1 + a_{22} \pmb c_2 + \cdots + a_{m2} \pmb c_m \\
+\cdots \\
+\Phi(\pmb b_n) &amp;= a_{1n} \pmb c_1 + a_{2n} \pmb c_2 + \cdots + a_{mn} \pmb c_m \\
+\end{aligned}
+\tag{11.4}\]</span></span></p>
+<p><a href="#eq-coordi-trans1">식&nbsp;<span>11.4</span></a> 에서 나타난 계수 <span class="math inline">\(a_{ij}\)</span> 을 <span class="math inline">\(m \times n\)</span>-행렬 <span class="math inline">\(\pmb A_{\Phi}\)</span> 로 다음과 같이 표현할 수 있다.</p>
+<p><span id="eq-coordi-trans2"><span class="math display">\[
+\pmb A_{\Phi} =
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \\
+\end{bmatrix}
+\tag{11.5}\]</span></span></p>
+<p><a href="#eq-coordi-trans1">식&nbsp;<span>11.4</span></a> 에 나타난 행렬 <span class="math inline">\(\pmb A_{\Phi}\)</span> 를 <strong>변환행렬(transformation matrix)</strong>이라고 부르며 이 변환행렬은 각 벡터공간의 기저 <span class="math inline">\(B\)</span> 와 <span class="math inline">\(C\)</span>에 따라 정의되는 것에 유의하자.</p>
+</section>
+<section id="좌표와-변환행렬" class="level3" data-number="11.2.2">
+<h3 data-number="11.2.2" class="anchored" data-anchor-id="좌표와-변환행렬"><span class="header-section-number">11.2.2</span> 좌표와 변환행렬</h3>
+<p>만약 <span class="math inline">\(\hat {\pmb x}\)</span> 가 벡터공간 <span class="math inline">\(V\)</span> 에서 기저 <span class="math inline">\(B\)</span> 에 대한 원소 <span class="math inline">\(\pmb x\)</span>의 좌표이고</p>
+<p><span class="math display">\[ \pmb x = \pmb B \hat {\pmb x} \]</span></p>
+<p><span class="math inline">\(\hat {\pmb y}\)</span> 가 벡터공간 <span class="math inline">\(W\)</span> 에서 기저 <span class="math inline">\(C\)</span> 에 대한 선형사상 <span class="math inline">\(\pmb y = \Phi(\pmb x)\)</span>의 좌표이면</p>
+<p><span class="math display">\[ \pmb y = \pmb C \hat {\pmb y} \]</span></p>
+<p>두 좌표 <span class="math inline">\(\hat {\pmb x}\)</span> 와 <span class="math inline">\(\hat {\pmb y}\)</span> 사이의 관계는 다음과 같다.</p>
+<p><span id="eq-coordi-trans3"><span class="math display">\[ \hat {\pmb y} = \pmb A_{\Phi} \hat {\pmb x}  \tag{11.6}\]</span></span></p>
+<p>참고로 <span class="math inline">\(\RR^n\)</span> 에서 <span class="math inline">\(\RR^m\)</span> 으로의 선형사상 <span class="math inline">\(\Phi: \RR^n \rightarrow \RR^m\)</span> 를 생각하고 각 공간의 기저를 표준 기저(standard basis)로 고려하면 변환행렬 <span class="math inline">\(\pmb A_{\Phi}\)</span> 는 선형사상 <span class="math inline">\(\pmb y = \Phi(\pmb x )\)</span> 을 나타내는 <span class="math inline">\(m \times n\)</span> 행렬이다.</p>
+<p><span id="eq-coordi-trans4"><span class="math display">\[ \pmb y = \pmb A_{\Phi} \pmb x  \tag{11.7}\]</span></span></p>
+</section>
+<section id="예제" class="level3" data-number="11.2.3">
+<h3 data-number="11.2.3" class="anchored" data-anchor-id="예제"><span class="header-section-number">11.2.3</span> 예제</h3>
+<ul>
+<li>부교재 Example 2.21 (Transformation Matrix) 참조</li>
+<li>부교재 Example 2.22 (Linear Transformations of Vectors) 참조</li>
+</ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-math2020ml" class="csl-entry" role="listitem">
-Deisenroth, Marc Peter, A Aldo Faisal, 와/과 Cheng Soon Ong. 2020. <em>Mathematics for machine learning</em>. Cambridge University Press.
-</div>
-</div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -555,10 +718,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../qmds/10_linear_map.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">선형사상</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./qmds/01_schedule.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">강의 일정과 내용</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../qmds/12_linear_transform_basis.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">기저변환과 변환행렬</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
