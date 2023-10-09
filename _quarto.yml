@@ -21,7 +21,11 @@ book:
     - qmds/07_vector_space.qmd
     - qmds/08_vector_space_base.qmd
     - qmds/09_matrix_rank.qmd
-#    - qmds/10_linear_map.qmd
+    - qmds/10_linear_map.qmd
+    - qmds/11_linear_transform.qmd
+    - qmds/12_linear_transform_basis.qmd
+    - qmds/13_linear_kernel.qmd
+    - qmds/14_affine.qmd
     - references.qmd
 
 bibliography: references.bib

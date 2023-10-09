@@ -1,8 +1,10 @@
 # 선형사상 {#linear_map}
 
+
+
 ## 선형사상
 
-$V$ 와 $W$ 가 벡터공간일 때 함수 $T :V \rightarrow W$ 가 다음 두 가지 조건을 만족하면 선형사상(linear mapping, linear transformation)이라고 한다.
+$V$ 와 $W$ 가 벡터공간일 때 함수 $T :V \rightarrow W$ 가 다음 두 가지 조건을 만족하면 선형사상(linear mapping, linear transformation, homomorphism)이라고 한다.
 
 $$
 \begin{aligned}
@@ -12,3 +14,43 @@ $$
 $$
 
 
+
+- 선형사상의 종류와 성질
+
+다음에 나오는 특별한 성질을 가진 선형사상과 특별한 함수의 정의를 반드시 학습하고 암기하세요
+
+  + Injective(단사함수, one-to-one)
+  + Surjective(전사함수, onto)
+  + Bijective(전단사함수, one-to-one correspondence)
+  + 항등함수($id_V$)
+  + 역함수
+  
+다음과 같은 용어는 참고로 알아두자.
+
+  + Isomorphism (동형사상): $T : V \rightarrow W$ linear and bijective
+  + Automorphism (자기동형사상): $T : V \rightarrow V$ linear and bijective
+
+ 
+
+::: {#thm-isomorphism}
+ 
+##
+
+한 벡터공간 $V$ 가 있어서 $dim(V)=n$ 이면 동형사상 $f :V \rightarrow \RR^n$ 이있다.
+
+$\blacksquare$
+:::
+
+<!----
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(0_V) = 0_W$ 이다.
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(-v) = -T(v)$ 이다.
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(v_1 - v_2) = T(v_1) - T(v_2)$ 이다.
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(0_V) = 0_W$ 이다.
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(rv_1 + sv_2) = rT(v_1) + sT(v_2)$ 이다.
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(rv) = rT(v)$ 이다.
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(v_1 + v_2 + \cdots + v_n) = T(v_1) + T(v_2) + \cdots + T(v_n)$ 이다.
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(rv_1 + sv_2 + \cdots + tv_n) = rT(v_1) + sT(v_2) + \cdots + tT(v_n)$ 이다.
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(0_V) = 0_W$ 이다.
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(rv_1 + sv_2 + \cdots + tv_n) = rT(v_1) + sT(v_2) + \cdots + tT(v_n)$ 이다.
+  - $T : V \rightarrow W$ 가 선형사상이면 $T(rv_1 + sv_2 + \cdots + tv_n) = rT(v_1) + sT(v_2) + \cdots + tT(v_n)$ 이
+--->
