@@ -193,8 +193,8 @@ $$
 \begin{aligned}
 & \quad \tilde {\pmb B}  \pmb \alpha_{\tilde B} = \pmb B \pmb \alpha_B  \\
 \Rightarrow  & \quad  \pmb \alpha_{\tilde B}  = \tilde {\pmb B}^{-1} \pmb B  \pmb \alpha_B  \\
-\Rightarrow &  \quad \tilde {\pmb B}  \pmb \alpha_{\tilde B}  =\tilde {\pmb B}^{-1} \pmb I \pmb \alpha_B  \\
-\Rightarrow &  \quad \tilde {\pmb B}  \pmb \alpha_{\tilde B}  =\tilde {\pmb B}^{-1} \pmb \alpha_B  \\
+\Rightarrow &  \quad   \pmb \alpha_{\tilde B}  =\tilde {\pmb B}^{-1} \pmb I \pmb \alpha_B  \\
+\Rightarrow &  \quad   \pmb \alpha_{\tilde B}  =\tilde {\pmb B}^{-1} \pmb \alpha_B  \\
 \Rightarrow  & \quad   \pmb \alpha_{\tilde B}  = 
 \begin{bmatrix}
 1 & 1 \\
