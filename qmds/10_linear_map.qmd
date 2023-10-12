@@ -34,7 +34,7 @@ $$
 
 ::: {#thm-isomorphism}
  
-##
+## 동형사상 
 
 한 벡터공간 $V$ 가 있어서 $dim(V)=n$ 이면 동형사상 $f :V \rightarrow \RR^n$ 이있다.
 
