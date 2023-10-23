@@ -26,6 +26,10 @@ book:
     - qmds/12_linear_transform_basis.qmd
     - qmds/13_linear_kernel.qmd
     - qmds/14_affine.qmd
+    - qmds/15_inner_product_1.qmd
+    - qmds/16_inner_product_2.qmd
+    - qmds/17_ortho_normal_basis.qmd
+    - qmds/18_projection_1.qmd
     - references.qmd
 
 bibliography: references.bib
