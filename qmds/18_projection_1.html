@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>빅데이터분석를 위한 수학 - 6&nbsp; 행연산 행렬과 역행렬</title>
+<title>빅데이터분석를 위한 수학 - 18&nbsp; 직선으로의 정사영</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmds/07_vector_space.html" rel="next">
-<link href="../qmds/05_matrix_equation.html" rel="prev">
+<link href="../references.html" rel="next">
+<link href="../qmds/17_ortho_normal_basis.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmds/06_matrix_inverse_2.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">행연산 행렬과 역행렬</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmds/18_projection_1.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">직선으로의 정사영</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -165,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmds/06_matrix_inverse_2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../qmds/06_matrix_inverse_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">행연산 행렬과 역행렬</span></span></a>
   </div>
 </li>
@@ -237,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmds/18_projection_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/18_projection_1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">직선으로의 정사영</span></span></a>
   </div>
 </li>
@@ -257,8 +257,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">목차</h2>
    
   <ul class="collapse">
-  <li><a href="#역행렬의-공식" id="toc-역행렬의-공식" class="nav-link active" data-scroll-target="#역행렬의-공식"><span class="header-section-number">6.1</span> 역행렬의 공식</a></li>
-  <li><a href="#행연산과-역행렬" id="toc-행연산과-역행렬" class="nav-link" data-scroll-target="#행연산과-역행렬"><span class="header-section-number">6.2</span> 행연산과 역행렬</a></li>
+  <li><a href="#직선으로의-사영" id="toc-직선으로의-사영" class="nav-link active" data-scroll-target="#직선으로의-사영"><span class="header-section-number">18.1</span> 직선으로의 사영</a></li>
+  <li><a href="#중요한-내용과-정의" id="toc-중요한-내용과-정의" class="nav-link" data-scroll-target="#중요한-내용과-정의"><span class="header-section-number">18.2</span> 중요한 내용과 정의</a></li>
   </ul>
 </nav>
     </div>
@@ -267,7 +267,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="matrix_inverse2" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">행연산 행렬과 역행렬</span></span></h1>
+<h1 class="title"><span id="projection_1" class="quarto-section-identifier"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">직선으로의 정사영</span></span></h1>
 </div>
 
 
@@ -284,214 +284,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="직선으로의-사영" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="직선으로의-사영"><span class="header-section-number">18.1</span> 직선으로의 사영</h2>
+<div id="fig-projection-line" class="quarto-figure quarto-figure-center anchored" width="80%,">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-projection-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../images/projection_line.png" class="img-fluid figure-img">
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-projection-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;18.1: 직선으로의 사영
+</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li>벡터 <span class="math inline">\(\pmb b\)</span> 의 방향과 같은 벡터들 중에 벡터 <span class="math inline">\(\pmb x\)</span> 와 가장 가까운 벡터를 <span class="math inline">\(\pi_U(\pmb x)\)</span> 라고 하자. 이 벡터는 <span class="math inline">\(\pmb x\)</span> 에서 직선 <span class="math inline">\(\pmb b\)</span> 에 내린 사영(projection)이며 다음을 만족해야 한다.</li>
+</ol>
+<p><span id="eq-projection-1"><span class="math display">\[
+\left\langle\pmb{x}-\pi_U(\pmb{x}), \pmb{b}\right\rangle=0
+\tag{18.1}\]</span></span></p>
+<ol start="2" type="1">
+<li>사영 <span class="math inline">\(\pi_U(\pmb x)\)</span> 는 벡터 <span class="math inline">\(\pmb b\)</span> 의 방향이므로 어떤 스칼라 <span class="math inline">\(\lambda\)</span> 가 존재하여 다음을 만족해야 한다.</li>
+</ol>
+<p><span class="math display">\[
+\pi_U(\pmb{x})=\lambda \pmb{b}
+\]</span></p>
+<ol start="3" type="1">
+<li><a href="#eq-projection-1" class="quarto-xref">식&nbsp;<span>18.1</span></a> 에서 제시된 직교하는 성질을 다시 쓰면 조건과 같다.</li>
+</ol>
+<p><span class="math display">\[
+\langle\pmb{x}-\lambda \pmb{b}, \pmb{b}\rangle=0 .
+\]</span></p>
+<ol start="4" type="1">
+<li>내적의 성질을 이용하면 다음을 얻을 수 있다. <span class="math display">\[
+\langle\pmb{x}, \pmb{b}\rangle-\lambda\langle\pmb{b}, \pmb{b}\rangle=0 \Longleftrightarrow \lambda=\frac{\langle\pmb{x}, \pmb{b}\rangle}{\langle\pmb{b}, \pmb{b}\rangle}=\frac{\langle\pmb{b}, \pmb{x}\rangle}{\|\pmb{b}\|^2} .
+\]</span> 따라서 스칼라 <span class="math inline">\(\lambda\)</span> 는 다음과 같다.</li>
+</ol>
+<p><span class="math display">\[
+\lambda=\frac{\pmb{b}^{\top} \pmb{x}}{\pmb{b}^{\top} \pmb{b}}=\frac{\pmb{b}^{\top} \pmb{x}}{\|\pmb{b}\|^2}
+\]</span></p>
+<ol start="5" type="1">
+<li>이제 벡터 <span class="math inline">\(\pmb b\)</span> 의 방향으로의 벡터 <span class="math inline">\(\pmb x\)</span>의 사영 <span class="math inline">\(\pi_U(\pmb x)\)</span> 는 다음과 같다.</li>
+</ol>
+<p><span id="eq-projection-2"><span class="math display">\[
+\pi_U(\pmb{x})=\lambda \pmb{b}=\frac{\langle\pmb{x}, \pmb{b}\rangle}{\|\pmb{b}\|^2} \pmb{b}=\frac{\pmb{b}^{\top} \pmb{x}}{\|\pmb{b}\|^2} \pmb{b}
+\tag{18.2}\]</span></span></p>
+<ol start="6" type="1">
+<li><a href="#eq-projection-2" class="quarto-xref">식&nbsp;<span>18.2</span></a> 에서 <span class="math inline">\(\pmb{b}^{\top} \pmb{x}\)</span> 는 스칼라이므로 다음과 같이 쓸 수 있으며 노름(norm)의 정의와 행렬의 결합법칙을 이용하면 다음과 같다.</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+\pi_U(\pmb{x}) &amp;= \frac{\pmb{b}^{\top} \pmb{x}}{\|\pmb{b}\|^2} \pmb{b} \\
+&amp; = \pmb{b} \frac{\pmb{b}^{\top} \pmb{x}}{\|\pmb{b}\|^2} \quad (\text{스칼라 성질을 이용})\\
+&amp; =\frac{\pmb{b} (\pmb{b}^{\top} \pmb{x})}{\pmb{b}^{\top} \pmb{b}} \\
+&amp; =\frac{(\pmb{b} \pmb{b}^{\top}) \pmb{x}}{\pmb{b}^{\top} \pmb{b}}  \quad (\text{결합법칙을 이용})\\
+&amp; =\frac{\pmb{b} \pmb{b}^{\top}}{\pmb{b}^{\top} \pmb{b}} \pmb{x} \\
+&amp; =\frac{\pmb{b} \pmb{b}^{\top}}{\|\pmb{b}\|^2} \pmb{x} \\
+&amp; =\pmb P_{\pi}\pmb{x}
+\end{aligned}
+\]</span></p>
+<ol start="7" type="1">
+<li>벡터 <span class="math inline">\(\pmb b\)</span> 의 방향으로 사영행렬 <span class="math inline">\(\pmb P_{\pi}\)</span> 는 다음과 같다.</li>
+</ol>
+<p><span id="eq-projection-3"><span class="math display">\[
+\pmb P_{\pi} = \frac{\pmb{b} \pmb{b}^{\top}}{\|\pmb{b}\|^2}
+\tag{18.3}\]</span></span></p>
+<p><a href="#eq-projection-3" class="quarto-xref">식&nbsp;<span>18.3</span></a> 에서 <span class="math inline">\(\pmb{b} \pmb{b}^{\top}\)</span> 는 정방행렬이고 <span class="math inline">\(\|\pmb{b}\|^2\)</span>는 스칼라임에 유의하자.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-중요
+사영행렬의 성질
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>강의자료 슬라이드 6번의 기본행렬은 강의 범위에 포함되지 않습니다.</p>
-<p>단, 첨가행렬과 행연산을 이용하여 역행렬을 구하는 방법은 반드시 알아야 합니다.</p>
-<p>이 연습장에 포함된 예제와 부교재 33-34 페이지 Calculating the Inverse 의 Example 2.9 를 공부하세요.</p>
+<p>이미 사영된 <span class="math inline">\(\pi_U(\boldsymbol{x})\)</span> 에 다시 사영행렬 <span class="math inline">\(\boldsymbol{P}_\pi\)</span> 을 곱해도 아무런 변화가 없다. 이는 벡터 <span class="math inline">\(\pmb x\)</span> 를 이미 벡터 <span class="math inline">\(\pmb b\)</span> 의 방향으로 사영했기 때문에 다시 사영해도 변화가 없다는 것을 의미한다.</p>
+<p>즉, <span class="math inline">\(\boldsymbol{P}_\pi \pi_U(\boldsymbol{x})=\pi_U(\boldsymbol{x})\)</span> 이다. 사영행렬 <span class="math inline">\(\boldsymbol{P}_\pi\)</span> 가 모든 벡터 <span class="math inline">\(\boldsymbol{x}\)</span> 에 대해 <span class="math inline">\(\boldsymbol{P}_\pi^2 \boldsymbol{x}=\boldsymbol{P}_\pi \boldsymbol{x}\)</span> 를 만족한다는 것을 의미한다.</p>
+<p><span class="math display">\[ \boldsymbol{P}_\pi^2 = \boldsymbol{P}_\pi \]</span></p>
 </div>
 </div>
-<section id="역행렬의-공식" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="역행렬의-공식"><span class="header-section-number">6.1</span> 역행렬의 공식</h2>
-<p>먼저 <span class="math inline">\(2 \times 2\)</span> 행렬의 역행렬을 구하는 공식을 이용해 보자. 다음과 같이 <span class="math inline">\(2 \times 2\)</span> 행렬 <span class="math inline">\(\pmb A\)</span> 가 주어졌을 때</p>
-<p><span class="math display">\[
-\pmb  A =
-\begin{bmatrix}
-1 &amp; 2 \\
-3 &amp; 4
-\end{bmatrix}
-\]</span></p>
-<p><a href="04_matrix_inverse.html#eq-inverse-22" class="quarto-xref">식&nbsp;<span>4.1</span></a> 를 사용하면 다음과 같이 <span class="math inline">\(2 \times 2\)</span> 행렬의 역행렬을 구할 수 있다.</p>
-<p><span class="math display">\[ \pmb A^{-1} = \frac{1}{(1)(4)-(2)(3) }
-\begin{bmatrix}
-4 &amp; -2 \\
--3 &amp; 1
-\end{bmatrix}
-=
-\begin{bmatrix}
--2 &amp; 1 \\
-3/2 &amp; -1/2
-\end{bmatrix}
-\]</span></p>
 </section>
-<section id="행연산과-역행렬" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="행연산과-역행렬"><span class="header-section-number">6.2</span> 행연산과 역행렬</h2>
-<p>아래에 주어진 두 예제에서 행연산을 이용하여 역행렬을 구해보자.</p>
-<div id="exr-inverse1" class="theorem exercise">
-<p><span class="theorem-title"><strong>예제 6.1 (<span class="math inline">\(2 \times 2\)</span> 행렬의 역행렬) </strong></span>정방행렬의 역행렬을 구하는 다른 방법 중의 하나는 항등행렬 <span class="math inline">\(\pmb I\)</span> 와 같이 첨가행렬을 만들고 행연산을 적용하는 것이다. 이제 행연산을 이용하여 <span class="math inline">\(\pmb A\)</span> 의 역행렬을 구하는 방법을 연습해 보자</p>
-<p>이제 <span class="math inline">\(\pmb A\)</span> 과 이차원 항등행렬 <span class="math inline">\(\pmb I\)</span> 을 붙여서 만든 첨가행렬은 다음과 같다.</p>
-<p><span class="math display">\[
-[ ~\pmb A ~|~ \pmb I ~]=
-\left[\begin{array}{cc|cc}
-1 &amp; 2 &amp; 1 &amp; 0\\
-3 &amp; 4  &amp; 0 &amp; 1
-\end{array}\right]
-\]</span></p>
-<p>이제 위의 첨가행렬에서 행연산을 이용하여 행렬 <span class="math inline">\(\pmb A\)</span> 부분을 항등행렬로 만들어 보자.</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;
-\left[\begin{array}{cc|cc}
-1 &amp; 2 &amp;  1 &amp; 0\\
-3 &amp; 4 &amp; 0 &amp; 1
-\end{array}\right]  
-\begin{array}{c}
-\\
-(-3)(\text{1st row}) + (\text{2nd row})
-\end{array} \\
-&amp; \\
-\rightarrow &amp;
-\left[\begin{array}{cc|cc}
-1 &amp; 2  &amp; 1 &amp; 0\\
-0 &amp; -2 &amp; -3 &amp; 1
-\end{array}\right]  
-\begin{array}{c}
-(1)(\text{2nd row}) + (\text{1st row})
-\\
-\end{array} \\
-&amp; \\
-\rightarrow &amp;
-\left[\begin{array}{cc|cc}
-1 &amp; 0  &amp; -2 &amp; 1\\
-0 &amp; -2 &amp; -3 &amp; 1
-\end{array}\right]  
-\begin{array}{c}
-\\
-(-1/2) (\text{2nd row})
-\end{array} \\
-&amp; \\
-\rightarrow &amp;
-\left[\begin{array}{cc|cc}
-1 &amp; 0  &amp; -2 &amp; 1\\
-0 &amp; 1 &amp; 3/2 &amp;-1/2
-\end{array}\right]
-\end{aligned}
-\]</span></p>
-<p>이렇게 첨가행렬에서 행렬 <span class="math inline">\(\pmb A\)</span> 부분을 행연산을 이용하여 항등행렬로 만들어 주면 오른쪽의 항등행렬이 <span class="math inline">\(\pmb A^{-1}\)</span>로 나타난다.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
-</div>
-<div id="exr-inverse2" class="theorem exercise">
-<p><span class="theorem-title"><strong>예제 6.2 (<span class="math inline">\(4 \times 4\)</span> 행렬의 역행렬) </strong></span><span class="math display">\[ \pmb A =
-\begin{bmatrix}
-1 &amp; 0 &amp; 1 &amp; 0 \\
-0 &amp; 1 &amp; 1 &amp; 0 \\
-1 &amp; 1 &amp; 0 &amp; 1 \\
-1 &amp; 1 &amp; 1 &amp; 0
-\end{bmatrix}
-\]</span></p>
-<p>첨가행렬에서 행연산을 이용하여 행렬 <span class="math inline">\(\pmb A\)</span> 부분을 항등행렬로 만들어 보자.</p>
-<p><span class="math display">\[
-\begin{aligned}
-&amp; \left[\begin{array}{cccc|cccc}
-1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
-1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
-1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
-\end{array}\right]  
-\begin{array}{c}
-\\
-\\
-(-1)(\text{1st row}) + (\text{3nd row}) \\
-(-1)(\text{1st row}) + (\text{4th row})
-\end{array}  \\
-&amp; \\
-\rightarrow &amp;
-\left[\begin{array}{cccc|cccc}
-1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; -1 &amp; 1 &amp; -1 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 1 &amp; 0  &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1
-\end{array}\right]  
-\begin{array}{c}
-\\
-\text{swap with 2nd and 4th row} \\
-\\
-\end{array}  \\
-&amp; \\
-\rightarrow &amp;
-\left[\begin{array}{cccc|cccc}
-1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 0  &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 \\
-0 &amp; 1 &amp; -1 &amp; 1 &amp; -1 &amp; 0 &amp; 1 &amp; 0\\
-0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0
-\end{array}\right]  
-\begin{array}{c}
-\\
-\\
-(-1)(\text{2nd row}) + (\text{3rd row}) \\
-(-1)(\text{2nd row}) + (\text{4th row})
-\end{array}  \\
-&amp; \\
-\rightarrow &amp;
-\left[\begin{array}{cccc|cccc}
-1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 1 &amp; 0  &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 \\
-0 &amp; 0 &amp; -1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; -1\\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; -1
-\end{array}\right]  
-\begin{array}{c}
-(-1)(\text{4th row}) + (\text{1st row})  \\
-\\
-\\
-\end{array}  \\
-&amp; \\
-\rightarrow &amp;
-\left[\begin{array}{cccc|cccc}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1\\
-0 &amp; 1 &amp; 0  &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 \\
-0 &amp; 0 &amp; -1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; -1\\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; -1
-\end{array}\right]  
-\begin{array}{c}
-\\
-\\
-\\
-\text{swap with 3rd and 4th row}  
-\end{array}  \\
-&amp; \\
-\rightarrow &amp;
-\left[\begin{array}{cccc|cccc}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1\\
-0 &amp; 1 &amp; 0  &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; -1 \\
-0 &amp; 0 &amp; -1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; -1
-\end{array}\right]  
-\begin{array}{c}
-\\
-\\
-\\
-(-1)(\text{3rd row}) + (\text{4th row})
-\end{array}  \\
-&amp; \\
-\rightarrow &amp;
-\left[\begin{array}{cccc|cccc}
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 1\\
-0 &amp; 1 &amp; 0  &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 \\
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; -1 \\
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; -2
-\end{array}\right]  
-\end{aligned}
-\]</span></p>
-<p>위의 마지막 결과로 다음과 같은 역행렬이 얻어진다.</p>
-<p><span class="math display">\[
-\pmb A^{-1} =
-\begin{bmatrix}
-0 &amp; -1 &amp; 0 &amp; 1\\
--1 &amp; 0 &amp; 0 &amp; 1 \\
-1 &amp; 1 &amp; 0 &amp; -1 \\
-1 &amp; 1 &amp; 1 &amp; -2
-\end{bmatrix}
-\]</span></p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
-</div>
+<section id="중요한-내용과-정의" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="중요한-내용과-정의"><span class="header-section-number">18.2</span> 중요한 내용과 정의</h2>
+<ul>
+<li>슬라이드 18번의 5페이지에 나온 사영행렬에 대한 예제</li>
+<li>부교재 Example 3.10</li>
+</ul>
 
 
 </section>
@@ -889,13 +768,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmds/05_matrix_equation.html" class="pagination-link  aria-label=" <span="">5&nbsp; <span class="chapter-title">가우스소거법과 연립방정식의 해</span>"&gt;
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">가우스소거법과 연립방정식의 해</span></span>
+      <a href="../qmds/17_ortho_normal_basis.html" class="pagination-link  aria-label=" <span="">17&nbsp; <span class="chapter-title">직교기저</span>"&gt;
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">직교기저</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmds/07_vector_space.html" class="pagination-link" aria-label="<span class='chapter-number'>7</span>&nbsp; <span class='chapter-title'>벡터공간</span>">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">벡터공간</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

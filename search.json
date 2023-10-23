@@ -14,7 +14,7 @@
     "href": "qmds/01_schedule.html#강의-진도",
     "title": "1  강의 일정과 내용",
     "section": "1.1 강의 진도",
-    "text": "1.1 강의 진도\n\n1주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n2\n행렬의 도입\n2-9, 13-17\n\n\n\n3\n행렬의 연산\n1-3, 6-7, 9-12\n\n\n\n\n\n2주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n4\n역행렬과 연립방정식의 해\n1-5\n\n\n\n5\n가우스소거법과 연립방정식의 해\n1-21\n27-32 페이지\n\n\n6\n행연산 행렬과 역행렬\n\n33-34 페이지\n\n\n\n\n3주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n7\n벡터공간\n6-10\n37-40 페이지\n\n\n8\n벡터공간의 기저와 차원\n1-15\n40-47 페이지\n\n\n9\n행렬의 계수\n4, 7\n47-48 페이지\n\n\n\n\n4주차\n\n추석연휴\n\n5주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n10\n선형사상\n1,2,4,5,6,7\n48-49 페이지\n\n\n11\n선형사상\n\n50- 53 페이지\n\n\n12\n기저변환과 변환행렬\n\n\n\n\n13\n선형변환의 핵과 상\n1-2\n58-60 페이지\n\n\n14\n아핀공간",
+    "text": "1.1 강의 진도\n\n1주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n2\n행렬의 도입\n2-9, 13-17\n\n\n\n3\n행렬의 연산\n1-3, 6-7, 9-12\n\n\n\n\n\n2주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n4\n역행렬과 연립방정식의 해\n1-5\n\n\n\n5\n가우스소거법과 연립방정식의 해\n1-21\n27-32 페이지\n\n\n6\n행연산 행렬과 역행렬\n\n33-34 페이지\n\n\n\n\n3주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n7\n벡터공간\n6-10\n37-40 페이지\n\n\n8\n벡터공간의 기저와 차원\n1-15\n40-47 페이지\n\n\n9\n행렬의 계수\n4, 7\n47-48 페이지\n\n\n\n\n4주차\n\n추석연휴\n\n5주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n10\n선형사상\n1,2,4,5,6,7\n48-49 페이지\n\n\n11\n선형사상\n\n50- 53 페이지\n\n\n12\n기저변환과 변환행렬\n\n\n\n\n13\n선형변환의 핵과 상\n1-2\n58-60 페이지\n\n\n14\n아핀공간\n\n\n\n\n\n\n6주차\n\n\n\n\n슬라이드\n주제\n페이지 번호\n부교재 내용\n\n\n\n\n15\n유클리드공간 위에서의 내적\n2,3,5,6,7\n71-78 페이지\n\n\n16\n벡터공간 위에서의 내적\n1,5,7-12\n71-78 페이지\n\n\n17\n직교기저\n1-6\n78-80 페이지\n\n\n18\n직선으로의 정사영\n1-5\n81-84 페이지",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>강의 일정과 내용</span>"
     ]
@@ -307,6 +307,56 @@
     "text": "노트\n\n\n\n강의 슬라이드 14번 아핀공간의 주제는 추후에 강의합니다.",
     "crumbs": [
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>아핀공간</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/15_inner_product_1.html#중요한-내용과-정의",
+    "href": "qmds/15_inner_product_1.html#중요한-내용과-정의",
+    "title": "15  유클리드공간 위에서의 내적",
+    "section": "15.1 중요한 내용과 정의",
+    "text": "15.1 중요한 내용과 정의\n\n유클리드 공간에서 두 벡터의 내적(dot product, inner product)\n내적의 성질",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>유클리드공간 위에서의 내적</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/16_inner_product_2.html#중요한-내용과-정의",
+    "href": "qmds/16_inner_product_2.html#중요한-내용과-정의",
+    "title": "16  벡터공간 위에서의 내적",
+    "section": "16.1 중요한 내용과 정의",
+    "text": "16.1 중요한 내용과 정의\n\n벡터공간에서 내적의 정의\n\n슬라이드 15번에서 유클리드 공간에서 벡터의 내적 성질은 사실 벡터공간에서 내적의 정의입니다.\n\n노름(Norm)의 정의와 성질\n거리의 정의와 성질",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>벡터공간 위에서의 내적</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/17_ortho_normal_basis.html#중요한-내용과-정의",
+    "href": "qmds/17_ortho_normal_basis.html#중요한-내용과-정의",
+    "title": "17  직교기저",
+    "section": "17.1 중요한 내용과 정의",
+    "text": "17.1 중요한 내용과 정의\n\n직교의 정의\n직교 기저의 정의와 성질\n직교여공간의 정의",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>직교기저</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/18_projection_1.html#직선으로의-사영",
+    "href": "qmds/18_projection_1.html#직선으로의-사영",
+    "title": "18  직선으로의 정사영",
+    "section": "18.1 직선으로의 사영",
+    "text": "18.1 직선으로의 사영\n\n\n\n\n\n\n그림 18.1: 직선으로의 사영\n\n\n\n\n벡터 \\(\\pmb b\\) 의 방향과 같은 벡터들 중에 벡터 \\(\\pmb x\\) 와 가장 가까운 벡터를 \\(\\pi_U(\\pmb x)\\) 라고 하자. 이 벡터는 \\(\\pmb x\\) 에서 직선 \\(\\pmb b\\) 에 내린 사영(projection)이며 다음을 만족해야 한다.\n\n\\[\n\\left\\langle\\pmb{x}-\\pi_U(\\pmb{x}), \\pmb{b}\\right\\rangle=0\n\\tag{18.1}\\]\n\n사영 \\(\\pi_U(\\pmb x)\\) 는 벡터 \\(\\pmb b\\) 의 방향이므로 어떤 스칼라 \\(\\lambda\\) 가 존재하여 다음을 만족해야 한다.\n\n\\[\n\\pi_U(\\pmb{x})=\\lambda \\pmb{b}\n\\]\n\n식 18.1 에서 제시된 직교하는 성질을 다시 쓰면 조건과 같다.\n\n\\[\n\\langle\\pmb{x}-\\lambda \\pmb{b}, \\pmb{b}\\rangle=0 .\n\\]\n\n내적의 성질을 이용하면 다음을 얻을 수 있다. \\[\n\\langle\\pmb{x}, \\pmb{b}\\rangle-\\lambda\\langle\\pmb{b}, \\pmb{b}\\rangle=0 \\Longleftrightarrow \\lambda=\\frac{\\langle\\pmb{x}, \\pmb{b}\\rangle}{\\langle\\pmb{b}, \\pmb{b}\\rangle}=\\frac{\\langle\\pmb{b}, \\pmb{x}\\rangle}{\\|\\pmb{b}\\|^2} .\n\\] 따라서 스칼라 \\(\\lambda\\) 는 다음과 같다.\n\n\\[\n\\lambda=\\frac{\\pmb{b}^{\\top} \\pmb{x}}{\\pmb{b}^{\\top} \\pmb{b}}=\\frac{\\pmb{b}^{\\top} \\pmb{x}}{\\|\\pmb{b}\\|^2}\n\\]\n\n이제 벡터 \\(\\pmb b\\) 의 방향으로의 벡터 \\(\\pmb x\\)의 사영 \\(\\pi_U(\\pmb x)\\) 는 다음과 같다.\n\n\\[\n\\pi_U(\\pmb{x})=\\lambda \\pmb{b}=\\frac{\\langle\\pmb{x}, \\pmb{b}\\rangle}{\\|\\pmb{b}\\|^2} \\pmb{b}=\\frac{\\pmb{b}^{\\top} \\pmb{x}}{\\|\\pmb{b}\\|^2} \\pmb{b}\n\\tag{18.2}\\]\n\n식 18.2 에서 \\(\\pmb{b}^{\\top} \\pmb{x}\\) 는 스칼라이므로 다음과 같이 쓸 수 있으며 노름(norm)의 정의와 행렬의 결합법칙을 이용하면 다음과 같다.\n\n\\[\n\\begin{aligned}\n\\pi_U(\\pmb{x}) &= \\frac{\\pmb{b}^{\\top} \\pmb{x}}{\\|\\pmb{b}\\|^2} \\pmb{b} \\\\\n& = \\pmb{b} \\frac{\\pmb{b}^{\\top} \\pmb{x}}{\\|\\pmb{b}\\|^2} \\quad (\\text{스칼라 성질을 이용})\\\\\n& =\\frac{\\pmb{b} (\\pmb{b}^{\\top} \\pmb{x})}{\\pmb{b}^{\\top} \\pmb{b}} \\\\\n& =\\frac{(\\pmb{b} \\pmb{b}^{\\top}) \\pmb{x}}{\\pmb{b}^{\\top} \\pmb{b}}  \\quad (\\text{결합법칙을 이용})\\\\\n& =\\frac{\\pmb{b} \\pmb{b}^{\\top}}{\\pmb{b}^{\\top} \\pmb{b}} \\pmb{x} \\\\\n& =\\frac{\\pmb{b} \\pmb{b}^{\\top}}{\\|\\pmb{b}\\|^2} \\pmb{x} \\\\\n& =\\pmb P_{\\pi}\\pmb{x}\n\\end{aligned}\n\\]\n\n벡터 \\(\\pmb b\\) 의 방향으로 사영행렬 \\(\\pmb P_{\\pi}\\) 는 다음과 같다.\n\n\\[\n\\pmb P_{\\pi} = \\frac{\\pmb{b} \\pmb{b}^{\\top}}{\\|\\pmb{b}\\|^2}\n\\tag{18.3}\\]\n식 18.3 에서 \\(\\pmb{b} \\pmb{b}^{\\top}\\) 는 정방행렬이고 \\(\\|\\pmb{b}\\|^2\\)는 스칼라임에 유의하자.\n\n\n\n\n\n\n사영행렬의 성질\n\n\n\n이미 사영된 \\(\\pi_U(\\boldsymbol{x})\\) 에 다시 사영행렬 \\(\\boldsymbol{P}_\\pi\\) 을 곱해도 아무런 변화가 없다. 이는 벡터 \\(\\pmb x\\) 를 이미 벡터 \\(\\pmb b\\) 의 방향으로 사영했기 때문에 다시 사영해도 변화가 없다는 것을 의미한다.\n즉, \\(\\boldsymbol{P}_\\pi \\pi_U(\\boldsymbol{x})=\\pi_U(\\boldsymbol{x})\\) 이다. 사영행렬 \\(\\boldsymbol{P}_\\pi\\) 가 모든 벡터 \\(\\boldsymbol{x}\\) 에 대해 \\(\\boldsymbol{P}_\\pi^2 \\boldsymbol{x}=\\boldsymbol{P}_\\pi \\boldsymbol{x}\\) 를 만족한다는 것을 의미한다.\n\\[ \\boldsymbol{P}_\\pi^2 = \\boldsymbol{P}_\\pi \\]",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>직선으로의 정사영</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/18_projection_1.html#중요한-내용과-정의",
+    "href": "qmds/18_projection_1.html#중요한-내용과-정의",
+    "title": "18  직선으로의 정사영",
+    "section": "18.2 중요한 내용과 정의",
+    "text": "18.2 중요한 내용과 정의\n\n슬라이드 18번의 5페이지에 나온 사영행렬에 대한 예제\n부교재 Example 3.10",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>직선으로의 정사영</span>"
     ]
   },
   {
