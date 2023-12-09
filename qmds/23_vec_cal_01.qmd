@@ -4,7 +4,7 @@
 
 - 이 장은 부교재 139-159쪽에 대한 정리입니다.
 - 5.4 Gradients of Matrices 는 시험범위에 포함되지 않습니다.
-
+- 5.6.2 Automatic Differentiation 은 Exaample 5.14 를 꼭 읽어보세요.
 :::
 
 ## 용어
