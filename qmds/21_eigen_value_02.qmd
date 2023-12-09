@@ -1,0 +1,31 @@
+# 고유값과 고유벡터의 성질 {#eigen-02}
+
+::: callout-note
+이 노트의 내용은 부교재 110-119 쪽의 내용을 요약한 것이다.
+
+- 부교재 4.3 Cholesky Decomposition 은 시험범위에서 제외합니다.
+
+- 부교재 Definition 4.13 의 defective matrix 는 시험범위에서 제외합니다.
+
+- 부교재 4.4절은 모두 시험범위에 포함됩니다. 특히 Example 4.11 중요하니 꼭 공부하세요
+
+:::
+
+## 중요한 성질
+
+
+- 행렬 $\pmb A$ 와 그 전치(transpose) ${\pmb A}^T$ 는 동일한 고유값을 가지나 고유벡터는 같지 않을 수 있다.
+
+- 대칭이고 양정치 행렬(symmetrix positive definite)은 항상 양의 실수 고유값을 갖는다.
+
+- 행렬 $\pmb A$ 의 고유값이 모두 다르면 고유벡터들은 선형독립이다.
+
+- 부교재 Theorem 4.15, Example 4.8 
+
+- 부교재 Theorem 4.16, Theorem 4.17
+
+## 고유값 분해와 대각화
+
+- 고유값분해: Eigendecomposition
+- 대각화 : Diagonalization
+

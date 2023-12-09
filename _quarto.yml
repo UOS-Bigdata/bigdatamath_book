@@ -30,6 +30,11 @@ book:
     - qmds/16_inner_product_2.qmd
     - qmds/17_ortho_normal_basis.qmd
     - qmds/18_projection_1.qmd
+    - qmds/19_trace_det.qmd
+    - qmds/20_eigen_value_01.qmd
+    - qmds/21_eigen_value_02.qmd
+    - qmds/22_svd_01.qmd
+    - qmds/23_vec_cal_01.qmd
     - references.qmd
 
 bibliography: references.bib
