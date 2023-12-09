@@ -360,6 +360,146 @@
     ]
   },
   {
+    "objectID": "qmds/19_trace_det.html#용어",
+    "href": "qmds/19_trace_det.html#용어",
+    "title": "19  행렬식과 대각합",
+    "section": "19.1 용어",
+    "text": "19.1 용어\n\ndeterminant : 행렬식\ntrace : 대각합\n\n\n\n\n\n\n\n주의\n\n\n\n행렬식과 대각합은 정방행렬(square matrix)에 대해서만 정의된다.",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>행렬식과 대각합</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/19_trace_det.html#행렬식",
+    "href": "qmds/19_trace_det.html#행렬식",
+    "title": "19  행렬식과 대각합",
+    "section": "19.2 행렬식",
+    "text": "19.2 행렬식\n##행렬식의 정의\n정방행렬(square matrix) \\(\\pmb A\\) 의 행렬식(determinant)는 \\(\\operatorname{det}(\\pmb A)\\) 로 표기한다.\n\\(A \\in \\mathbb{R}^{2 \\times 2}\\) 의 행렬식은 다음과 같이 계산한다.\n\\[\n\\operatorname{det}(\\boldsymbol{A})=\\left|\\begin{array}{ll}\na_{11} & a_{12} \\\\\na_{21} & a_{22}\n\\end{array}\\right|=a_{11} a_{22}-a_{12} a_{21} .\n\\]\n\n19.2.1 역행렬과 Rank\n\nTheorm 4.1. 과 Theorem 4.3\n\n행렬 \\(\\pmb A\\) 가 $n n $ 정방행렬(square matrix) 인 경우 다음 3개의 문장이 동치(equivalent)임을 보여준다.\n\n\\(\\operatorname{det}(\\boldsymbol{A}) \\ne 0\\)\n\\(rank(\\boldsymbol{A}) = n\\)\n\\(\\boldsymbol{A}\\)은 역행렬이 존재한다\n\n\n\n19.2.2 삼각행렬의 행렬식\n행렬 \\(\\pmb T\\) 가 상삼각행렬(upper triangular matrix) 또는 하삼각행렬(lower triangular matrix)이면 행렬식은 대각원소(diagonal element)의 곱과 같다.\n\\[\n\\operatorname{det}(\\boldsymbol{T}) = \\prod_{i=1}^n T_{ii}\n\\]\n\n\n19.2.3 Laplace Expansion\n\n행렬식을 계산하는 방법 중 하나는 Laplace Expansion 이며 Theorem 4.2. 에서 설명한다.\nExample 4.3 꼭 읽어보기\n\n\n\n19.2.4 행렬식의 성질\n\\[\n\\operatorname{det}(\\boldsymbol{A} \\boldsymbol{B}) = \\operatorname{det}(\\boldsymbol{A}) \\operatorname{det}(\\boldsymbol{B})\n\\] \\[\n\\operatorname{det}(\\boldsymbol{A}^T) = \\operatorname{det}(\\boldsymbol{A})\n\\]\n\\[\n\\operatorname{det}(\\boldsymbol{A}^{-1}) = \\frac{1}{\\operatorname{det}(\\boldsymbol{A})}\n\\]\n\\[\n\\operatorname{det}(\\lambda \\boldsymbol{A}) = \\lambda^n \\operatorname{det}(\\boldsymbol{A})\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>행렬식과 대각합</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/19_trace_det.html#대각합",
+    "href": "qmds/19_trace_det.html#대각합",
+    "title": "19  행렬식과 대각합",
+    "section": "19.3 대각합",
+    "text": "19.3 대각합\n대각합의 정의는 부교재 식 4.18 에서 정의된다.\n\n19.3.1 대각합의 성질\n\n\\(\\operatorname{tr}(\\boldsymbol{A}+\\boldsymbol{B})=\\operatorname{tr}(\\boldsymbol{A})+\\operatorname{tr}(\\boldsymbol{B})\\) for \\(\\boldsymbol{A}, \\boldsymbol{B} \\in \\mathbb{R}^{n \\times n}\\)\n\\(\\operatorname{tr}(\\alpha \\boldsymbol{A})=\\alpha \\operatorname{tr}(\\boldsymbol{A}), \\alpha \\in \\mathbb{R}\\) for \\(\\boldsymbol{A} \\in \\mathbb{R}^{n \\times n}\\)\n\\(\\operatorname{tr}\\left(\\boldsymbol{I}_n\\right)=n\\)\n\\(\\operatorname{tr}(\\boldsymbol{A B})=\\operatorname{tr}(\\boldsymbol{B} \\boldsymbol{A})\\) for \\(\\boldsymbol{A} \\in \\mathbb{R}^{n \\times k}, \\boldsymbol{B} \\in \\mathbb{R}^{k \\times n}\\)\n\n대각합은 교환법칙이 성립히기 떄문에 다음과 같은 성질이 성립한다.\n\\[\n\\operatorname{tr}(\\boldsymbol{A} \\boldsymbol{K} \\boldsymbol{L})=\\operatorname{tr}(\\boldsymbol{K} \\boldsymbol{L} \\boldsymbol{A})\n\\] 벡터의 연산에서도 대각합의 교환법칙이 성립디어 다음과 같은 유용한 식이 성립한다.\n\\[\n\\operatorname{tr}\\left(\\boldsymbol{x} \\boldsymbol{y}^{\\top}\\right)=\\operatorname{tr}\\left(\\boldsymbol{y}^{\\top} \\boldsymbol{x}\\right)=\\boldsymbol{y}^{\\top} \\boldsymbol{x} \\in \\mathbb{R} .\n\\]\n대각합의 교환법칙때문에 어떤 행렬의 앞에 특정 행렬을 곱하고, 뒤에 역행렬을 곱해도 대각합은 변하지 않는다.\n\\[\n\\operatorname{tr}\\left(\\boldsymbol{S}^{-1} \\boldsymbol{A} \\boldsymbol{S}\\right) = \\operatorname{tr}\\left(\\boldsymbol{A} \\boldsymbol{S} \\boldsymbol{S}^{-1}\\right)=\\operatorname{tr}(\\boldsymbol{A})\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>행렬식과 대각합</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/19_trace_det.html#특성다항식",
+    "href": "qmds/19_trace_det.html#특성다항식",
+    "title": "19  행렬식과 대각합",
+    "section": "19.4 특성다항식",
+    "text": "19.4 특성다항식\n특성다항식(Characteristic polynomial)은 다음과 같이 정의된다 (부교재 definition 4.5)\n실수 \\(\\lambda \\in \\mathbb{R}\\) 와 정방행렬(square matrix) \\(\\boldsymbol{A} \\in \\mathbb{R}^{n \\times n}\\) 에 대하여\n\\[\n\\begin{aligned}\np_{\\boldsymbol{A}}(\\lambda) & :=\\operatorname{det}(\\boldsymbol{A}-\\lambda \\boldsymbol{I}) \\\\\n& =c_0+c_1 \\lambda+c_2 \\lambda^2+\\cdots+c_{n-1} \\lambda^{n-1}+(-1)^n \\lambda^n,\n\\end{aligned}\n\\tag{19.1}\\]\n\n19.4.1 행렬식과 대각합과의 관계\n\\[ c_0 = \\operatorname{det}(\\boldsymbol A)\\]\n\\[ c_{n-1} = (-1)^n \\operatorname{tr}(\\boldsymbol A)\\]",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>행렬식과 대각합</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/20_eigen_value_01.html#용어",
+    "href": "qmds/20_eigen_value_01.html#용어",
+    "title": "20  고유값과 고유벡터의 정의",
+    "section": "20.1 용어",
+    "text": "20.1 용어\n\neigenvalue : 고유값\neigenvector : 고유벡터\n\n\n\n\n\n\n\n주의\n\n\n\n고유값과 고유벡터는 정방행렬(square matrix)에 대해서만 정의된다.",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>고유값과 고유벡터의 정의</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/20_eigen_value_01.html#고유값과-고유벡터",
+    "href": "qmds/20_eigen_value_01.html#고유값과-고유벡터",
+    "title": "20  고유값과 고유벡터의 정의",
+    "section": "20.2 고유값과 고유벡터",
+    "text": "20.2 고유값과 고유벡터\n\n20.2.1 정의\n\\(n\\)-차원 정방행렬 \\(\\pmb A\\) 이 있을 때, 다음 식을 만족하는 \\(\\lambda\\) 와 벡터 \\(\\pmb x\\)가 존재하면 \\(\\lambda\\) 를 행렬 \\(\\pmb A\\) 의 고유값(eigenvalue), \\(\\pmb x\\) 를 행렬 \\(\\pmb A\\) 의 고유벡터(eigenvector)라고 한다 (부교재 definition 4.6)\n\\[ \\pmb A \\pmb x = \\lambda \\pmb x \\]\n\n고유벡터는 유일하지 않다. 즉, 벡터 \\(\\pmb x\\) 가 고유벡터이면 \\(c \\pmb x\\) 도 고유벡터이다.\n\n\\[ \\pmb A (c \\pmb x) = c \\pmb A \\pmb x = c \\lambda \\pmb x = \\lambda (c \\pmb x) \\]\n\n\n20.2.2 계산\n다음 3개의 문장은 동치이다\n\n\\(\\lambda\\) 는 행렬 \\(\\pmb A\\) 의 고유값이다.\n방정식 \\((\\pmb A - \\lambda \\pmb I)\\pmb x = \\pmb 0\\) 은 영벡터이외의 해를 가진다(nontrivial solution)\n\\(\\lambda\\) 는 행렬 \\(\\pmb A - \\lambda \\pmb I\\) 의 행렬식이 0이다.\n\n\\[ \\operatorname{det}(\\pmb A - \\lambda \\pmb I) = 0  \\tag{20.1}\\]\n\n\\(\\lambda\\) 는 행렬 \\(\\pmb A - \\lambda \\pmb I\\) 의 rank가 \\(n\\) 보다 작다.\nTheorem 4.8 에 의하면 위에서 행렬식이 0 인 방정식 식 20.1 을 푸는 것은 식 19.1 의 이 0 을 푸는 것과 동일하다는 것이다.\n\n\n\n20.2.3 중복도와 고유공간\n부교재의 Definition 4.9, 4.10, 4.11 에 대한 내용입니다.\n\n대수적 중복도(algebraic multiplicity) 는 특성다항식 식 19.1 이 0인 방정식을 푸는 경우 다항식에서 고유값이 중근(multiple root)의 해로 나타나는 차수를 의미한다.\n기하적 중복도(geometric multiplicity) 는 고유값에 대응하는 고유벡터들 중 선형독립인 고유벡터들의 최대 개수를 의미한다.\n고유 공간(eigenspace)은 고유값에 대응하는 고유벡터들이 생성하는 벡터공간을 의미한다.\n\n\n\n예제 20.1 3차원 행렬 \\(\\pmb A\\) 가 다음과 같을 때\n\\[\\pmb A=\\left[\\begin{array}{ccc}0 & 0 & -2 \\\\ 1 & 2 & 1 \\\\ 1 & 0 & 3\\end{array}\\right]\\]\n행렬 \\(\\pmb A\\)의 특성다항식은 다음과 같다.\n\\[\n\\operatorname{det}(\\lambda \\pmb I -\\pmb A)=\n\\left|\\begin{array}{ccc}\n\\lambda & 0 & 2 \\\\\n-1 & \\lambda-2 & -1 \\\\\n-1 & 0 & \\lambda-3\n\\end{array}\\right|=(\\lambda-1)(\\lambda-2)^2\n\\] 참고로 특성방정식을 푸는 경우, 방정식 \\(\\operatorname{det}(\\pmb A - \\lambda \\pmb I)=0\\) 이나 \\(\\operatorname{det}(\\lambda \\pmb I -\\pmb A)= 0\\) 중 어느 것을 사용해도 상관없다.\n첫번째 고유값은 \\(\\lambda_1=1\\) 이다. 고유벡터를 구하기 위해서는 다음과 같은 방정식을 풀면 된다.\n\\[ (\\lambda_1 \\pmb I -\\pmb A )\\pmb x = \\pmb 0  \\]\n위의 방정식을 풀면\n\\[\n(\\lambda_1 \\pmb I -\\pmb A )\\pmb x= (\\pmb I -\\pmb A )\\pmb x\n=\n\\begin{bmatrix}\n1 & 0 & 2 \\\\\n-1 & -1 & -1 \\\\\n-1 & 0 & -2\n\\end{bmatrix}\n\\begin{bmatrix}\nx_1 \\\\\nx_2 \\\\\nx_3 \\\\\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n0 \\\\\n0 \\\\\n0 \\\\\n\\end{bmatrix}\n\\]\n아래와 같이 간단히 할 수 있으며\n\\[ x_1 = -2x_3, \\quad x_2 = x_3 \\] 다음과 같은 고유값과 고유벡터를 얻을 수 있다.\n\\[ \\lambda_1=1 \\quad \\rightarrow \\quad  x_1=\\begin{bmatrix}-2 \\\\ 1 \\\\ 1\\end{bmatrix} \\]\n첫번째 고유값은 \\(\\lambda_1=1\\) 이며 대수적 중복도는 1이고 기하적 중복도도 1이다. 이 경우 고유공간 \\(E_1\\) 은 한 개의 고유벡터 \\(\\pmb x_1\\) 이 생성하는 부분공간을 의미한다.\n\\[\nE_1 = \\text{span}\\left\\{\\begin{bmatrix}-2 \\\\ 1 \\\\ 1\\end{bmatrix} \\right\\}\n\\]\n다음으로 두번째 고유값에 대한 방정식 \\((\\lambda_2 \\pmb I -\\pmb A )\\pmb x = \\pmb 0\\) 을 풀면 다음과 같다.\n\\[\n(\\lambda_2 \\pmb I -\\pmb A )\\pmb x= (2\\pmb I -\\pmb A )\\pmb x =\n\\begin{bmatrix}\n2 & 0 & 2 \\\\\n-1 & 0 & -1 \\\\\n-1 & 0 & -1\n\\end{bmatrix}\n\\begin{bmatrix}\nx_1 \\\\\nx_2 \\\\\nx_3 \\\\\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n0 \\\\\n0 \\\\\n0 \\\\\n\\end{bmatrix}\n\\]\n이 방정식은 아래와 같이 간단히 할 수 있으며\n\\[ x_1 = -x_3 \\] 다음과 같은 두 개의 고유벡터를 얻을 수 있다.\n\\[\n\\lambda_2=2\\quad \\rightarrow \\quad  x_2=\\begin{bmatrix}-1 \\\\ 0 \\\\ 1\\end{bmatrix}\n\\quad x_3=\\begin{bmatrix}0 \\\\ 1 \\\\ 0\\end{bmatrix}\n\\]\n위에서 두번째 고유값은 \\(\\lambda_2=2\\) 이며 대수적 중복도는 2이다. 또한 선형독립인 2개의 고유벡터를 구할 수 있으므로 기하적 중복도는 2이다.\n이 경우 \\(E_2\\) 는 두 개의 고유벡터 \\(\\pmb x_1, \\pmb x_2\\) 가 생성하는 부분공간을 의미한다.\n\\[\nE_2 = \\text{span}\\left\\{\\begin{bmatrix}-1 \\\\ 0 \\\\ 1\\end{bmatrix}, \\begin{bmatrix}0 \\\\ 1 \\\\ 0\\end{bmatrix}\\right\\}\n\\]\n\\(\\blacksquare\\)\n\n\n이제 대수적 중복도와 기하적 중복도가 다른 경우에 대한 예제를 들어보자.\n\n\n예제 20.2 3차원 행렬 \\(\\pmb A\\) 가 다음과 같을 때\n\\[\\pmb A=\\left[\\begin{array}{ccc}1 & 0 & 2 \\\\ -1 & 1 & 3 \\\\ 0 & 0 & 2\\end{array}\\right]\\]\n행렬 \\(\\pmb A\\)의 특성다항식은 다음과 같다.\n\\[\n\\operatorname{det}(\\lambda \\pmb I -\\pmb A)=\n\\left|\\begin{array}{ccc}\n\\lambda-1 & 0 & -2 \\\\\n1 & \\lambda-1 & -3  \\\\\n0 & 0 & \\lambda-2\n\\end{array}\\right|=(\\lambda-1)^2(\\lambda-2)\n\\] 첫번째 고유값은 \\(\\lambda_1=1\\) 이다. 고유벡터를 구하기 위해서는 다음과 같은 방정식을 풀면 된다.\n\\[ (\\lambda_1 \\pmb I -\\pmb A )\\pmb x = \\pmb 0  \\]\n위의 방정식을 풀면\n\\[\n(\\lambda_1 \\pmb I -\\pmb A )\\pmb x= (\\pmb I -\\pmb A )\\pmb x =\n\\begin{bmatrix}\n0 & 0 & -2 \\\\\n1 & 0 & -3 \\\\\n0 & 0 & -1\n\\end{bmatrix}\n\\begin{bmatrix}\nx_1 \\\\\nx_2 \\\\\nx_3 \\\\\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n0 \\\\\n0 \\\\\n0 \\\\\n\\end{bmatrix}\n\\]\n아래와 같이 간단히 할 수 있으며\n\\[ \\quad x_1 = x_3 =0 \\] 다음과 같은 하나의 고유벡터를 얻을 수 있다.\n\\[ \\lambda_1=1 \\quad \\rightarrow \\quad  x_1=\\begin{bmatrix} 0 \\\\ 1 \\\\ 0 \\end{bmatrix} \\]\n첫번째 고유값은 \\(\\lambda_1=1\\) 이며 대수적 중복도는 2이지만 기하적 중복도는 1이다. 이 경우 고유공간 \\(E_1\\) 은 한 개의 고유벡터 \\(\\pmb x_1\\) 이 생성하는 부분공간을 의미한다.\n\\[\nE_1 = \\text{span}\\left\\{\\begin{bmatrix}0 \\\\ 1 \\\\ 0\\end{bmatrix} \\right\\}\n\\]\n다음으로 두번째 고유값에 대한 방정식 \\((\\lambda_2 \\pmb I -\\pmb A )\\pmb x = \\pmb 0\\) 을 풀면 다음과 같다.\n\\[\n(\\lambda_2 \\pmb I -\\pmb A )\\pmb x= (2\\pmb I -\\pmb A )\\pmb x =\n\\begin{bmatrix}\n1 & 0 & 2 \\\\\n1 & 1 & -3 \\\\\n0 & 0 & 0\n\\end{bmatrix}\n\\begin{bmatrix}\nx_1 \\\\\nx_2 \\\\\nx_3 \\\\\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n0 \\\\\n0 \\\\\n0 \\\\\n\\end{bmatrix}\n\\]\n이 방정식은 아래와 같이 간단히 할 수 있으며\n\\[ x_1 = -2x_3, \\quad x_2=5x_3  \\] 다음과 같은 한 개의 고유벡터를 얻을 수 있다.\n\\[\n\\lambda_2=2\\quad \\rightarrow \\quad  x_2=\\begin{bmatrix}-2 \\\\ 5 \\\\ 1\\end{bmatrix}\n\\]\n위에서 두번째 고유값은 \\(\\lambda_2=2\\) 이며 대수적 중복도는 1이다. 또한 선형독립인 1개의 고유벡터를 구할 수 있으므로 기하적 중복도는 1이다.\n이 경우 \\(E_2\\) 는 한 개의 고유벡터 \\(\\pmb x_2\\) 가 생성하는 부분공간을 의미한다.\n\\[\nE_2 = \\text{span}\\left\\{\\begin{bmatrix}-2\\\\ 5 \\\\ 1\\end{bmatrix}\\right\\}\n\\]\n\\(\\blacksquare\\)",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>고유값과 고유벡터의 정의</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/21_eigen_value_02.html#중요한-성질",
+    "href": "qmds/21_eigen_value_02.html#중요한-성질",
+    "title": "21  고유값과 고유벡터의 성질",
+    "section": "21.1 중요한 성질",
+    "text": "21.1 중요한 성질\n\n행렬 \\(\\pmb A\\) 와 그 전치(transpose) \\({\\pmb A}^T\\) 는 동일한 고유값을 가지나 고유벡터는 같지 않을 수 있다.\n대칭이고 양정치 행렬(symmetrix positive definite)은 항상 양의 실수 고유값을 갖는다.\n행렬 \\(\\pmb A\\) 의 고유값이 모두 다르면 고유벡터들은 선형독립이다.\n부교재 Theorem 4.15, Example 4.8\n부교재 Theorem 4.16, Theorem 4.17",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>고유값과 고유벡터의 성질</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/21_eigen_value_02.html#고유값-분해와-대각화",
+    "href": "qmds/21_eigen_value_02.html#고유값-분해와-대각화",
+    "title": "21  고유값과 고유벡터의 성질",
+    "section": "21.2 고유값 분해와 대각화",
+    "text": "21.2 고유값 분해와 대각화\n\n고유값분해: Eigendecomposition\n대각화 : Diagonalization",
+    "crumbs": [
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>고유값과 고유벡터의 성질</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/22_svd_01.html",
+    "href": "qmds/22_svd_01.html",
+    "title": "22  특이값 분해",
+    "section": "",
+    "text": "노트\n\n\n\n\n시험 범위는 부교재 119-129 쪽입니다 (4.5절)\n부교재 4.3 Example 4.13 중요하니 꼭 공부하세요\n시험은 과제 3 번과 유사하게 출제됩니다.\n4.6절은 시험범위에서 제외됩니다.",
+    "crumbs": [
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>특이값 분해</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/23_vec_cal_01.html#용어",
+    "href": "qmds/23_vec_cal_01.html#용어",
+    "title": "23  벡터 미분",
+    "section": "23.1 용어",
+    "text": "23.1 용어\n\nvector differential: 벡터 미분\npartial derivative: 편미분\ngradient: 그레디언트\nJacobian: 야코비안, 자코비안",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>벡터 미분</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/23_vec_cal_01.html#벡터-미분의-표기법",
+    "href": "qmds/23_vec_cal_01.html#벡터-미분의-표기법",
+    "title": "23  벡터 미분",
+    "section": "23.2 벡터 미분의 표기법",
+    "text": "23.2 벡터 미분의 표기법\n이제 다변량함수(multivariate function), \\(f: \\RR^n \\rightarrow \\RR^m\\)에 대한 미분을 생각해보자.\n먼저 간단한 예제를 고려해 보자. 두 열벡터 \\(\\pmb x=(x_1,x_2)^t \\in \\RR_2\\), \\(\\pmb y=(y_1,y_2,y_3)^t \\in \\RR^3\\)를 고려하고 다음과 같은 함수로 두 벡터의 관계가 정의된다고 하자.\n\\[\ny_1 = x_1^2 + x_2, \\quad y_2= \\exp (x_1) + 3 x_2, \\quad y_3 = \\sin(x_1) + x_2^3\n\\tag{23.1}\\]\n위의 관계를 함수 관계 \\(\\pmb f: \\RR^2 \\rightarrow \\RR^3\\) 로 나타내보면\n\\[\n\\pmb f(\\pmb x) =\n\\begin{bmatrix} f_1(\\pmb x) \\\\ f_2 (\\pmb x) \\\\ f_3(\\pmb x) \\end{bmatrix} =\n\\begin{bmatrix} x_1^2 + x_2 \\\\ \\exp (x_1) + 3 x_2 \\\\ \\sin(x_1) + x_2^3 \\end{bmatrix}\n\\]\n이러한 경우 다변량 함수 \\(\\pmb f\\)를 벡터 \\(\\pmb x\\)로 미분하려면, 즉 미분 표기법을 이용하려면 편미분을 한 결과를 행렬의 형태를 정해야한다.\n\\[  \\pardifftwo{ \\pmb f}{\\pmb x} = (n \\times m)-\\text{matrix} \\quad \\text{ or }  \\quad (m \\times n)-\\text{matrix}? \\]\n일단 각각의 편미분 \\(\\pardifftwo{f_i}{x_j}\\)를 구해야 하며 이는 scalar 미분으로 쉽게 구해진다.\n\\[\n\\begin{aligned}\n\\pardifftwo{  f_1}{ x_1} & = 2x_1, & \\quad \\pardifftwo{  f_2}{ x_1} & = \\exp(x_1), & \\quad\n\\pardifftwo{  f_3}{ x_1} & = \\cos(x_1) \\\\\n\\pardifftwo{  f_1}{ x_2} & = 1,    & \\quad \\pardifftwo{  f_2}{ x_1} & = 3,         & \\quad\n\\pardifftwo{  f_3}{ x_1} & = 3 x_2^2 \\\\\n\\end{aligned}\n\\tag{23.2}\\]\n이제 이제 편미분값들을 행렬의 형태로 정리해보자. 편미분을 행렬에 배치할 떄 다음과 같은 규칙을 사용할 것이다.\n\n행렬의 행은 \\(\\pmb f\\)의 차원 \\(m\\) 과 같다.\n행렬의 열은 \\(\\pmb x\\)의 차원 \\(n\\) 과 같다.\n\n위와 같이 편미분을 배치하는 벡타 미분 표기법을 분자 표기법 (Numerator layout)이라고 한다.\n\n\n\n\n\n\n분자 표기법 (Numerator layout)\n\n\n\n\\[\n\\pmb J = \\nabla_x \\pmb x =\\pardifftwo{ \\pmb f}{\\pmb x}  \\equiv \\pardifftwo{ \\pmb f}{\\pmb x^t}\n\\underset{def}{\\equiv} \\begin{bmatrix}\n\\pardifftwo{  f_1}{ x_1} &  \\pardifftwo{  f_1}{ x_2}  \\\\\n\\pardifftwo{  f_2}{ x_1} &  \\pardifftwo{  f_2}{ x_2}  \\\\\n\\pardifftwo{  f_3}{ x_1} &  \\pardifftwo{  f_3}{ x_2}\n\\end{bmatrix}\n=  \\begin{bmatrix}\n2x_1 &  1  \\\\\n\\exp(x_1) &  3  \\\\\n\\cos(x_1) &  3x_2^2\n\\end{bmatrix}\n\\] \\(\\pmb J\\)는 야코비안 행렬(Jacobian matrix)이라고 부른다.\n\n\n이제 이러한 분자표기법의 특별한 결과를 알아보자\n\n\\(f: \\RR^n \\rightarrow \\RR^1\\) 인 경우\n\\(f: \\RR^n \\rightarrow \\RR^1\\) 인 경우 벡터미분 결과를 그레디언트(gradient)라고 부르며 다음과 같이 표기된다.\n\n\\[\n\\nabla_x f = \\pardifftwo{ f}{\\pmb x} =\n\\begin{bmatrix} \\pardifftwo{ f}{x_1} & \\pardifftwo{ f}{x_2} & \\cdots & \\pardifftwo{ f}{x_n} \\end{bmatrix}\n\\]\n\n\\(f: \\RR^1 \\rightarrow \\RR^m\\) 인 경우\n\n\\[\n\\pardifftwo{\\pmb f}{x} =\n\\begin{bmatrix}\n\\pardifftwo{ f_1}{x} \\\\\n\\pardifftwo{ f_2}{x} \\\\\n\\vdots \\\\\n\\pardifftwo{ f_m}{x}\n\\end{bmatrix}\n\\]\n참고로 식 23.1 에서 정의한 함수 관계를 두 벡터 \\(\\pmb x\\) 와 y$ 의 사상관계로 보면\n\\[ \\pmb f : \\pmb x \\mapsto \\pmb y \\] 다음과 같이 그레디언트 벡터를 표기할 수 있다.\n\\[  \\pardifftwo{ \\pmb f}{\\pmb x} = \\pardifftwo{ \\pmb y}{\\pmb x}\n=\n\\begin{bmatrix}\n\\pardifftwo{  y_1}{ x_1} &  \\pardifftwo{  y_1}{ x_2}  \\\\\n\\pardifftwo{  y_2}{ x_1} &  \\pardifftwo{  y_2}{ x_2}  \\\\\n\\pardifftwo{  y_3}{ x_1} &  \\pardifftwo{  y_3}{ x_2}\n\\end{bmatrix}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>벡터 미분</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/23_vec_cal_01.html#함성함수의-미분법",
+    "href": "qmds/23_vec_cal_01.html#함성함수의-미분법",
+    "title": "23  벡터 미분",
+    "section": "23.3 함성함수의 미분법",
+    "text": "23.3 함성함수의 미분법\n이제 합성함수의 미분법(chain rule)에 대하여 알아보자.\n두 개의 함수\n\\[\n\\pmb g :\\RR^n \\mapsto \\RR^m, \\quad \\pmb f :\\RR^m \\mapsto \\RR^p\n\\] 가 있을 때, \\(\\pmb f\\)와 \\(\\pmb g\\)의 합성함수 \\(\\pmb h\\)는 다음과 같이 정의된다.\n\\[ \\pmb h( \\pmb x) = \\pmb f( \\pmb g( \\pmb x)) = \\pmb f \\circ \\pmb g\\] 즉,\n\\[\n\\pmb h : \\RR^n \\mapsto \\RR^m \\mapsto \\RR^p\n\\]\n이러한 합성함수의 미분은 다음과 같이 계산된다.\n\\[\n\\pardifftwo{ \\pmb h}{\\pmb x} = \\pardifftwo{ \\pmb f \\circ \\pmb g}{\\pmb x} = \\pardifftwo{ \\pmb f}{\\pmb g} \\pardifftwo{ \\pmb g}{\\pmb x}\n\\tag{23.3}\\]\n식 23.3 에서 \\(\\pardifftwo{ \\pmb f}{\\pmb g}\\)는 \\(p \\times m\\) Jacovian 벡터이고\n\\[\n\\pardifftwo{ \\pmb f}{\\pmb g}\n\\begin{bmatrix}\n\\pardifftwo{  f_1}{ g_1} &  \\pardifftwo{  f_1}{ g_2} & \\cdots &  \\pardifftwo{  f_1}{ g_m} \\\\\n\\pardifftwo{  f_2}{ g_1} &  \\pardifftwo{  f_2}{ g_2} & \\cdots &  \\pardifftwo{  f_2}{ g_m} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\pardifftwo{  f_p}{ g_1} &  \\pardifftwo{  f_p}{ g_2} & \\cdots &  \\pardifftwo{  f_p}{ g_m} \\\\\n\\end{bmatrix}\n=(p \\times m)\n\\]\n\\(\\pardifftwo{ \\pmb g}{\\pmb x}\\)는 \\(n \\times m\\) Jacovian 벡터이다\n\\[\n\\pardifftwo{ \\pmb g}{\\pmb x} =\n\\begin{bmatrix}\n\\pardifftwo{  g_1}{ x_1} &  \\pardifftwo{  g_1}{ x_2} & \\cdots &  \\pardifftwo{  g_1}{ x_n} \\\\\n\\pardifftwo{  g_2}{ x_1} &  \\pardifftwo{  g_2}{ x_2} & \\cdots &  \\pardifftwo{  g_2}{ x_n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\pardifftwo{  g_m}{ x_1} &  \\pardifftwo{  g_m}{ x_2} & \\cdots &  \\pardifftwo{  g_m}{ x_n} \\\\\n\\end{bmatrix}\n= (n \\times m)\n\\]\n함성함수의 미분 공식을 차원으로 나타내면 다음과 같다.\n\\[\n\\underset{ p \\times n} {\\pardifftwo{ \\pmb h}{\\pmb x}} = \\underset{ p \\times m} {\\pardifftwo{ \\pmb f}{\\pmb g}} \\underset{ m \\times n} {\\pardifftwo{ \\pmb g}{\\pmb x}}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>벡터 미분</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/23_vec_cal_01.html#두-벡터-내적의-미분",
+    "href": "qmds/23_vec_cal_01.html#두-벡터-내적의-미분",
+    "title": "23  벡터 미분",
+    "section": "23.4 두 벡터 내적의 미분",
+    "text": "23.4 두 벡터 내적의 미분\n\n23.4.1 상수벡터와 변수벡터의 내적\n먼저 상수 벡터 \\(\\pmb a\\)와 변수 벡터 \\(\\pmb x\\)의 내적의 미분을 생각해 보자.\n참고로 다음과 같이 두 벡터의 내적은 스칼라이다.\n\\[ \\pmb a^T \\pmb x = \\pmb x^T \\pmb a = a_1 x_1 + a_2x_2 + \\dots + a_n x_n \\]\n따라서 그레이디언트를 구하는 방법과 같이 결과는 행백터로 표기된다.\n\\[\n\\pardifftwo{ \\pmb a^T \\pmb x}{\\pmb x} = \\pardifftwo{ \\pmb x^T \\pmb a}{\\pmb x} = \\pmb a^T =[a_1, a_2, \\dots, a_n]\n\\]\n위의 식에서 상수벡터 \\(\\pmb a\\)는 가 전치로 앞에 나타나는 표현 \\(\\pmb a^T \\pmb x\\) 를 사용하면 결과 벡터 \\(\\pmb a^T\\)가 행벡터로 그대로 나타나지므로 내적의 미분 표기로 사용할 것이다.\n\\[\n\\pardifftwo{ \\pmb a^T \\pmb x}{\\pmb x} = \\pmb a^T \\pardifftwo{  \\pmb x}{\\pmb x} =\\pmb a^T\n\\tag{23.4}\\]\n\n\n23.4.2 상수벡터와 함수벡터의 내적\n더 나아가서 상수 벡터 \\(\\pmb a\\)와 함수 벡터 \\(\\pmb f\\)의 내적의 미분도 식 23.4 을 표시하는 동일한 논리로 다음과 같이 표기할 수 있다.\n\\[\n\\pardifftwo{ \\pmb a^T \\pmb f}{\\pmb x} = \\pmb a^T \\pardifftwo{  \\pmb f}{\\pmb x}\n\\tag{23.5}\\]\n참고로 식 23.5 에서 \\(\\pardifftwo{ \\pmb f}{\\pmb x}\\)는 행벡터가 아닌 행렬로 나타날 수 있다.\n\n\n23.4.3 함수벡터와 함수벡터의 내적\n이제 다음과 같이 같은 공간으로 사상되는 두 함수 \\(\\pmb f\\) 와 \\(\\pmb g\\) 의 내적을 생각해 보자.\n\\[ \\pmb f : \\RR^n \\mapsto \\RR^m, \\quad \\pmb g : \\RR^n \\mapsto \\RR^m\\] 두 함수의 내적을 미분하는 경우 곱셉 법칙을 적용하여야 하는데 행렬의 곱셉에서는 교환법칙이 성립되지 않으므로 순서에 주의해야 한다.\n내적 \\(\\pmb f^T \\pmb g\\) 를 각각 따로 미분해야 하는데 각 벡터에 대해 따로 미분을 실행해 보자\n\n\\(\\pmb f\\) 를 미분하는 경우 \\(\\pmb g\\) 는 상수 벡터 \\(\\pmb a\\) 로 취급한다. 그리고 식 23.5 를 적용한다.\n\n\\[\n\\pardifftwo{ \\pmb f^T \\pmb g}{\\pmb x} = \\pardifftwo{ \\pmb f^T \\pmb a}{\\pmb x} =\n\\pardifftwo{ \\pmb a^T \\pmb f}{\\pmb x} = \\pmb a^T \\pardifftwo{ \\pmb f}{\\pmb x} =\n\\pmb g^T \\pardifftwo{ \\pmb f}{\\pmb x}\n\\tag{23.6}\\]\n\n\\(\\pmb g\\) 를 미분하는 경우 \\(\\pmb f\\) 는 상수 벡터 \\(\\pmb a\\) 로 취급한다. 그리고 식 23.5 를 적용한다.\n\n\\[\n\\pardifftwo{ \\pmb f^T \\pmb g}{\\pmb x} = \\pardifftwo{ \\pmb a^T \\pmb g}{\\pmb x} =\n\\pmb a^T \\pardifftwo{ \\pmb g}{\\pmb x} =\n\\pmb f^T \\pardifftwo{ \\pmb f}{\\pmb x}\n\\tag{23.7}\\]\n이제 위의 두 결과 식 23.6 과 식 23.7 를 합치면 다음과 같은 최종적인 결과를 얻을 수 있다.\n\\[\n\\pardifftwo{ \\pmb f^T \\pmb g}{\\pmb x} = \\pmb g^T \\pardifftwo{ \\pmb f}{\\pmb x} + \\pmb f^T \\pardifftwo{ \\pmb g}{\\pmb x}\n\\tag{23.8}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>벡터 미분</span>"
+    ]
+  },
+  {
+    "objectID": "qmds/23_vec_cal_01.html#벡터-미분의-응용",
+    "href": "qmds/23_vec_cal_01.html#벡터-미분의-응용",
+    "title": "23  벡터 미분",
+    "section": "23.5 벡터 미분의 응용",
+    "text": "23.5 벡터 미분의 응용\n\n23.5.1 선형사상의 미분상\n이제 앞에서 배운 벡터의 미분을 이용하여 유용한 응용 공식을 유도해보자.\n먼저 선형변환 \\(\\pmb y = \\pmb A \\pmb x\\) 를 생각해 보자. 이때 (M N)-\\(\\pmb A\\)는 상수 행렬이다. 이때 \\(\\pmb y\\)를 \\(\\pmb x\\)로 미분하면 다음과 같다.\n먼저 행렬 \\(\\pmb A\\)의 \\(i\\) 번째 행을 \\(\\pmb a_i^T\\)라고 하면\n\\[\n\\pmb A = \\begin{bmatrix}\nA_{11} & A_{12} & \\dots & A_{1N} \\\\\nA_{21} & A_{22} & \\dots & A_{2N} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\nA_{M1} & A_{M2} & \\dots & A_{MN} \\\\\n\\end{bmatrix}=\n\\begin{bmatrix}\n\\pmb a_1^T  \\\\\n\\pmb a_2^T  \\\\\n\\vdots \\\\\n\\pmb a_M^T  \\\\\n\\end{bmatrix}\n\\]\n선형변환 \\(\\pmb f(\\pmb x) = \\pmb A \\pmb x\\) 로 정의하면 다음과 같이 나타낼 수 있다.\n\\[\n\\pmb A \\pmb x=\n\\begin{bmatrix}\n\\pmb a_1^T \\pmb x \\\\\n\\pmb a_2^T \\pmb x \\\\\n\\vdots \\\\\n\\pmb a_M^T \\pmb x \\\\\n\\end{bmatrix} =\n\\begin{bmatrix}\nf_1(\\pmb x) \\\\\nf_2(\\pmb x) \\\\\n\\vdots \\\\\nf_M(\\pmb x) \\\\\n\\end{bmatrix}\n= \\pmb f(\\pmb x)\n\\]\n따라서\n\\[\n\\pardifftwo{\\pmb A \\pmb x}{\\pmb x}   = \\pardifftwo{\\pmb f (\\pmb x)}{\\pmb x} =\n\\begin{bmatrix}\n\\pardifftwo{f_1}{x_1} & \\pardifftwo{f_1}{x_2} & \\dots & \\pardifftwo{f_1}{x_N} \\\\\n\\pardifftwo{f_2}{x_1} & \\pardifftwo{f_2}{x_2} & \\dots & \\pardifftwo{f_2}{x_N} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n\\pardifftwo{f_M}{x_1} & \\pardifftwo{f_M}{x_2} & \\dots & \\pardifftwo{f_M}{x_N} \\\\\n\\end{bmatrix} =\n\\begin{bmatrix}\nA_{11} & A_{12} & \\dots & A_{1N} \\\\\nA_{21} & A_{22} & \\dots & A_{2N} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\nA_{M1} & A_{M2} & \\dots & A_{MN} \\\\\n\\end{bmatrix} = \\pmb A\n\\] 따라서 선형사상의 미분은 그 자신이다.\n\\[ \\pardifftwo{\\pmb A \\pmb x}{\\pmb x}  = \\pmb A  \\tag{23.9}\\]\n\n\n23.5.2 이차형식의 미분\n이차형식 \\(f(\\pmb x) = \\pmb x^T \\pmb B \\pmb x\\) 을 미분하는 경우 식 23.8 을 적용한다. 이 경우 \\(\\pmb f= \\pmb x^T\\) 이고 \\(\\pmb g = \\pmb B \\pmb x\\) 이라고 놓고 식 23.8 을 적용하면 다음과 같다.\n\\[\n\\begin{aligned}\n\\pardifftwo{\\pmb x^T \\pmb B \\pmb x}{\\pmb x} & =\n\\pardifftwo{\\pmb x^T (\\pmb B \\pmb x)}{\\pmb x} \\\\\n& =  (\\pmb B \\pmb x)^T \\pardifftwo{ \\pmb x}{\\pmb x}  +\n\\pmb x^T \\pardifftwo{ (\\pmb B \\pmb x)}{\\pmb x} \\\\\n& =  \\pmb x^T \\pmb B^T  +  \\pmb x^T \\pmb B \\\\\n& = \\pmb x^T (\\pmb B^T + \\pmb B)\n\\end{aligned}\n\\]\n만약 행렬 \\(\\pmb B\\)가 대칭행렬이면 \\(\\pmb B^T = \\pmb B\\) 이므로 다음과 같이 간단하게 나타낼 수 있다.\n\\[\n\\pardifftwo{\\pmb x^T \\pmb B \\pmb x}{\\pmb x} = \\pmb x^T (\\pmb B + \\pmb B) = 2 \\pmb x^T \\pmb B\n\\tag{23.10}\\]\n\n\n23.5.3 최소제곱법의 미분\n부교재 Example 5.11 의 내용을 다음과 같이 정리할 수 있다.\n\\[ \\pmb y = \\pmb \\Phi \\pmb \\theta, \\quad\\]\n여기서 \\(\\boldsymbol{\\theta} \\in \\mathbb{R}^D\\) 는 모수벡터(parameter vector), \\(\\boldsymbol{\\Phi} \\in \\mathbb{R}^{N \\times D}\\) are 입력변수(input features), \\(\\boldsymbol{y} \\in \\mathbb{R}^N\\) are the 관측값 벡터(observation vector).\n다음으로 손실함수(loss function) \\(L\\) 과 오타벡터 $$ 를 다음과 같이 정의하자\n\\[\n\\begin{aligned}\n& L(\\boldsymbol{e}):=\\|\\boldsymbol{e}\\|^2 = \\pmb e^T \\pmb e\\\\\n& \\boldsymbol{e}(\\boldsymbol{\\theta}):=\\boldsymbol{y}-\\boldsymbol{\\Phi} \\boldsymbol{\\theta} .\n\\end{aligned}\n\\]\n이때 손실함수 \\(L\\) 을 최소화하는 \\(\\boldsymbol{\\theta}\\) 를 구하는 문제는 손실함수 \\(L\\) 을 \\(\\boldsymbol{\\theta}\\) 로 미분하여 0 이 되는 \\(\\boldsymbol{\\theta}\\) 를 구하는 문제로 바뀐다.\n이러한 경우 손실함수 \\(L\\) 을 \\(\\boldsymbol{\\theta}\\) 로 미분하는 경우 다음과 같이 정리할 수 있다.\n\\[\n\\begin{aligned}\n\\pardifftwo{L}{\\pmb \\theta} & =   \\pardifftwo{L}{\\pmb e} \\pardifftwo{\\pmb e}{\\pmb \\theta} \\\\\n& =  \\pardifftwo{\\pmb e^T \\pmb e}{\\pmb e} \\pardifftwo{(\\pmb y - \\pmb \\Phi \\pmb \\theta)}{\\pmb \\theta} \\\\\n& = 2\\pmb e^T \\pardifftwo {\\pmb \\Phi \\pmb \\theta}{\\pmb \\theta} \\\\\n& = 2\\pmb e^T \\pmb \\Phi \\\\\n& = 2(\\boldsymbol{y}-\\boldsymbol{\\Phi} \\boldsymbol{\\theta} ) ^T \\pmb \\Phi \\\\\n\\end{aligned}\n\\] 참고로 위의 식에서 첫 번째 식은 합성함수의 공식(식 23.3), 세 번째 식은 이차형식의 미분(식 23.10) 과 선형사상의 미분(식 23.9) 을 적용하였다.",
+    "crumbs": [
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>벡터 미분</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",

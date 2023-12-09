@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="이용희">
 
-<title>빅데이터분석를 위한 수학</title>
+<title>빅데이터분석를 위한 수학 - 20&nbsp; 고유값과 고유벡터의 정의</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,46 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./qmds/01_schedule.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../qmds/21_eigen_value_02.html" rel="next">
+<link href="../qmds/19_trace_det.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -118,7 +98,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">서론</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmds/20_eigen_value_01.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">고유값과 고유벡터의 정의</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -133,10 +113,10 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">빅데이터분석를 위한 수학</a> 
+      <a href="../">빅데이터분석를 위한 수학</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/ilovedata/statmehods" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./빅데이터분석를-위한-수학.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="../빅데이터분석를-위한-수학.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -149,151 +129,151 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">서론</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/01_schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/01_schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">강의 일정과 내용</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/02_matrix_intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/02_matrix_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">행렬의 도입</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/03_matrix_compute.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/03_matrix_compute.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">행렬의 연산</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/04_matrix_inverse.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/04_matrix_inverse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">행렬과 연립방정식의 해</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/05_matrix_equation.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/05_matrix_equation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">가우스소거법과 연립방정식의 해</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/06_matrix_inverse_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/06_matrix_inverse_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">행연산 행렬과 역행렬</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/07_vector_space.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/07_vector_space.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">벡터공간</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/08_vector_space_base.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/08_vector_space_base.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">벡터공간의 기저와 차원</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/09_matrix_rank.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/09_matrix_rank.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">행렬의 계수</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/10_linear_map.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/10_linear_map.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">선형사상</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/11_linear_transform.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/11_linear_transform.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">선형사상의 변환행렬</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/12_linear_transform_basis.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/12_linear_transform_basis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">기저변환과 변환행렬</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/13_linear_kernel.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/13_linear_kernel.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">선형변환의 핵과 상</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/14_affine.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/14_affine.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">아핀공간</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/15_inner_product_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/15_inner_product_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">유클리드공간 위에서의 내적</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/16_inner_product_2.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/16_inner_product_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">벡터공간 위에서의 내적</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/17_ortho_normal_basis.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/17_ortho_normal_basis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">직교기저</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/18_projection_1.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/18_projection_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">직선으로의 정사영</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/19_trace_det.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/19_trace_det.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">행렬식과 대각합</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/20_eigen_value_01.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/20_eigen_value_01.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">고유값과 고유벡터의 정의</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/21_eigen_value_02.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/21_eigen_value_02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">고유값과 고유벡터의 성질</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/22_svd_01.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/22_svd_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">특이값 분해</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qmds/23_vec_cal_01.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmds/23_vec_cal_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">벡터 미분</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -307,7 +287,8 @@ div.csl-indent {
     <h2 id="toc-title">목차</h2>
    
   <ul class="collapse">
-  <li><a href="#서론" id="toc-서론" class="nav-link active" data-scroll-target="#서론">서론</a></li>
+  <li><a href="#용어" id="toc-용어" class="nav-link active" data-scroll-target="#용어"><span class="header-section-number">20.1</span> 용어</a></li>
+  <li><a href="#고유값과-고유벡터" id="toc-고유값과-고유벡터" class="nav-link" data-scroll-target="#고유값과-고유벡터"><span class="header-section-number">20.2</span> 고유값과 고유벡터</a></li>
   </ul>
 </nav>
     </div>
@@ -316,26 +297,14 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">빅데이터분석를 위한 수학</h1>
+<h1 class="title"><span id="eigen-01" class="quarto-section-identifier"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">고유값과 고유벡터의 정의</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">저자</div>
-    <div class="quarto-title-meta-contents">
-             <p>이용희 </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">공개</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2023년 12월 10일</p>
-    </div>
-  </div>
   
     
   </div>
@@ -345,17 +314,6 @@ div.csl-indent {
 </header>
 
 
-<section id="서론" class="level1 unnumbered">
-<h1 class="unnumbered">서론</h1>
-<p>이 온라인 연습장은 <strong>빅데이터분석를 위한 수학</strong>의 강의 보충 노트와 연습문제를 모아 놓은 사이트입니다.</p>
-<ul>
-<li><p>이 연습장은 강의에 사용된 슬라이드와 부교재 <span class="citation" data-cites="math2020ml">Deisenroth, Faisal, 와/과 Ong (<a href="references.html#ref-math2020ml" role="doc-biblioref">2020</a>)</span> 를 참고하였다.</p>
-<ul>
-<li>강의에 사용된 슬라이드는 서울시립대학교 온라인 강의실에서 다운로드 받을 수 있다.</li>
-<li>강의에 사용된 부교재는 <a href="https://mml-book.github.io/">교과서 웹사이트</a>에서 다운로드 받을 수 있다.</li>
-</ul></li>
-<li><p>이 교재의 각 장에서는 강의에 사용된 슬라이드에서 배운 내용을 보충 설명하고 반드시 학습해야 할 주요 주제를 설명한다.</p></li>
-</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -367,19 +325,219 @@ div.csl-indent {
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>이 연습장의 각 장(chapter)의 내용은 강의에 사용된 슬라이드 번호의 내용과 일치합니다.</p></li>
-<li><p>이 연습장에서 벡터와 행렬은 각각 <span class="math inline">\(\pmb x\)</span>, <span class="math inline">\(\pmb A\)</span> 와 같이 볼드체로 표기하며 하나의 숫자를 나타내는 변수는 보통의 서체 <span class="math inline">\(x\)</span> 로 표기한다.</p></li>
-<li><p>정의, 정리, 예제 등이 끝나는 표시는 <span class="math inline">\(\blacksquare\)</span> 로 나타낸다.</p></li>
+<li><p>이 노트의 내용은 부교재 105-110쪽의 내용을 요약한 것이다.</p></li>
+<li><p>부교재 Example 4.5 반드시 공부하세요</p></li>
 </ul>
 </div>
 </div>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-math2020ml" class="csl-entry" role="listitem">
-Deisenroth, Marc Peter, A Aldo Faisal, 와/과 Cheng Soon Ong. 2020. <em>Mathematics for machine learning</em>. Cambridge University Press.
+<section id="용어" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="용어"><span class="header-section-number">20.1</span> 용어</h2>
+<ul>
+<li>eigenvalue : 고유값</li>
+<li>eigenvector : 고유벡터</li>
+</ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+주의
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>고유값과 고유벡터는 정방행렬(square matrix)에 대해서만 정의된다.</p>
+</div>
+</div>
+</section>
+<section id="고유값과-고유벡터" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="고유값과-고유벡터"><span class="header-section-number">20.2</span> 고유값과 고유벡터</h2>
+<section id="정의" class="level3" data-number="20.2.1">
+<h3 data-number="20.2.1" class="anchored" data-anchor-id="정의"><span class="header-section-number">20.2.1</span> 정의</h3>
+<p><span class="math inline">\(n\)</span>-차원 정방행렬 <span class="math inline">\(\pmb A\)</span> 이 있을 때, 다음 식을 만족하는 <span class="math inline">\(\lambda\)</span> 와 벡터 <span class="math inline">\(\pmb x\)</span>가 존재하면 <span class="math inline">\(\lambda\)</span> 를 행렬 <span class="math inline">\(\pmb A\)</span> 의 고유값(eigenvalue), <span class="math inline">\(\pmb x\)</span> 를 행렬 <span class="math inline">\(\pmb A\)</span> 의 고유벡터(eigenvector)라고 한다 (부교재 definition 4.6)</p>
+<p><span class="math display">\[ \pmb A \pmb x = \lambda \pmb x \]</span></p>
+<ul>
+<li>고유벡터는 유일하지 않다. 즉, 벡터 <span class="math inline">\(\pmb x\)</span> 가 고유벡터이면 <span class="math inline">\(c \pmb x\)</span> 도 고유벡터이다.</li>
+</ul>
+<p><span class="math display">\[ \pmb A (c \pmb x) = c \pmb A \pmb x = c \lambda \pmb x = \lambda (c \pmb x) \]</span></p>
+</section>
+<section id="계산" class="level3" data-number="20.2.2">
+<h3 data-number="20.2.2" class="anchored" data-anchor-id="계산"><span class="header-section-number">20.2.2</span> 계산</h3>
+<p>다음 3개의 문장은 동치이다</p>
+<ul>
+<li><span class="math inline">\(\lambda\)</span> 는 행렬 <span class="math inline">\(\pmb A\)</span> 의 고유값이다.</li>
+<li>방정식 <span class="math inline">\((\pmb A - \lambda \pmb I)\pmb x = \pmb 0\)</span> 은 영벡터이외의 해를 가진다(nontrivial solution)</li>
+<li><span class="math inline">\(\lambda\)</span> 는 행렬 <span class="math inline">\(\pmb A - \lambda \pmb I\)</span> 의 행렬식이 0이다.</li>
+</ul>
+<p><span id="eq-char-poly2"><span class="math display">\[ \operatorname{det}(\pmb A - \lambda \pmb I) = 0  \tag{20.1}\]</span></span></p>
+<ul>
+<li><p><span class="math inline">\(\lambda\)</span> 는 행렬 <span class="math inline">\(\pmb A - \lambda \pmb I\)</span> 의 rank가 <span class="math inline">\(n\)</span> 보다 작다.</p></li>
+<li><p>Theorem 4.8 에 의하면 위에서 행렬식이 0 인 방정식 <a href="#eq-char-poly2" class="quarto-xref">식&nbsp;<span>20.1</span></a> 을 푸는 것은 <a href="19_trace_det.html#eq-char-poly" class="quarto-xref">식&nbsp;<span>19.1</span></a> 의 이 0 을 푸는 것과 동일하다는 것이다.</p></li>
+</ul>
+</section>
+<section id="중복도와-고유공간" class="level3" data-number="20.2.3">
+<h3 data-number="20.2.3" class="anchored" data-anchor-id="중복도와-고유공간"><span class="header-section-number">20.2.3</span> 중복도와 고유공간</h3>
+<p>부교재의 Definition 4.9, 4.10, 4.11 에 대한 내용입니다.</p>
+<ul>
+<li><p>대수적 중복도(algebraic multiplicity) 는 특성다항식 <a href="19_trace_det.html#eq-char-poly" class="quarto-xref">식&nbsp;<span>19.1</span></a> 이 0인 방정식을 푸는 경우 다항식에서 고유값이 중근(multiple root)의 해로 나타나는 차수를 의미한다.</p></li>
+<li><p>기하적 중복도(geometric multiplicity) 는 고유값에 대응하는 고유벡터들 중 선형독립인 고유벡터들의 최대 개수를 의미한다.</p></li>
+<li><p>고유 공간(eigenspace)은 고유값에 대응하는 고유벡터들이 생성하는 벡터공간을 의미한다.</p></li>
+</ul>
+<hr>
+<div id="exr-Example-20-1" class="theorem exercise">
+<p><span class="theorem-title"><strong>예제 20.1 </strong></span>3차원 행렬 <span class="math inline">\(\pmb A\)</span> 가 다음과 같을 때</p>
+<p><span class="math display">\[\pmb A=\left[\begin{array}{ccc}0 &amp; 0 &amp; -2 \\ 1 &amp; 2 &amp; 1 \\ 1 &amp; 0 &amp; 3\end{array}\right]\]</span></p>
+<p>행렬 <span class="math inline">\(\pmb A\)</span>의 특성다항식은 다음과 같다.</p>
+<p><span class="math display">\[
+\operatorname{det}(\lambda \pmb I -\pmb A)=
+\left|\begin{array}{ccc}
+\lambda &amp; 0 &amp; 2 \\
+-1 &amp; \lambda-2 &amp; -1 \\
+-1 &amp; 0 &amp; \lambda-3
+\end{array}\right|=(\lambda-1)(\lambda-2)^2
+\]</span> 참고로 특성방정식을 푸는 경우, 방정식 <span class="math inline">\(\operatorname{det}(\pmb A - \lambda \pmb I)=0\)</span> 이나 <span class="math inline">\(\operatorname{det}(\lambda \pmb I -\pmb A)= 0\)</span> 중 어느 것을 사용해도 상관없다.</p>
+<p>첫번째 고유값은 <span class="math inline">\(\lambda_1=1\)</span> 이다. 고유벡터를 구하기 위해서는 다음과 같은 방정식을 풀면 된다.</p>
+<p><span class="math display">\[ (\lambda_1 \pmb I -\pmb A )\pmb x = \pmb 0  \]</span></p>
+<p>위의 방정식을 풀면</p>
+<p><span class="math display">\[
+(\lambda_1 \pmb I -\pmb A )\pmb x= (\pmb I -\pmb A )\pmb x
+=
+\begin{bmatrix}
+1 &amp; 0 &amp; 2 \\
+-1 &amp; -1 &amp; -1 \\
+-1 &amp; 0 &amp; -2
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+\end{bmatrix}
+\]</span></p>
+<p>아래와 같이 간단히 할 수 있으며</p>
+<p><span class="math display">\[ x_1 = -2x_3, \quad x_2 = x_3 \]</span> 다음과 같은 고유값과 고유벡터를 얻을 수 있다.</p>
+<p><span class="math display">\[ \lambda_1=1 \quad \rightarrow \quad  x_1=\begin{bmatrix}-2 \\ 1 \\ 1\end{bmatrix} \]</span></p>
+<p><strong>첫번째 고유값은 <span class="math inline">\(\lambda_1=1\)</span> 이며 대수적 중복도는 1이고 기하적 중복도도 1이다.</strong> 이 경우 고유공간 <span class="math inline">\(E_1\)</span> 은 한 개의 고유벡터 <span class="math inline">\(\pmb x_1\)</span> 이 생성하는 부분공간을 의미한다.</p>
+<p><span class="math display">\[
+E_1 = \text{span}\left\{\begin{bmatrix}-2 \\ 1 \\ 1\end{bmatrix} \right\}
+\]</span></p>
+<p>다음으로 두번째 고유값에 대한 방정식 <span class="math inline">\((\lambda_2 \pmb I -\pmb A )\pmb x = \pmb 0\)</span> 을 풀면 다음과 같다.</p>
+<p><span class="math display">\[
+(\lambda_2 \pmb I -\pmb A )\pmb x= (2\pmb I -\pmb A )\pmb x =
+\begin{bmatrix}
+2 &amp; 0 &amp; 2 \\
+-1 &amp; 0 &amp; -1 \\
+-1 &amp; 0 &amp; -1
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+\end{bmatrix}
+\]</span></p>
+<p>이 방정식은 아래와 같이 간단히 할 수 있으며</p>
+<p><span class="math display">\[ x_1 = -x_3 \]</span> 다음과 같은 두 개의 고유벡터를 얻을 수 있다.</p>
+<p><span class="math display">\[
+\lambda_2=2\quad \rightarrow \quad  x_2=\begin{bmatrix}-1 \\ 0 \\ 1\end{bmatrix}
+\quad x_3=\begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}
+\]</span></p>
+<p>위에서 <strong>두번째 고유값은 <span class="math inline">\(\lambda_2=2\)</span> 이며 대수적 중복도는 2이다.</strong> 또한 <strong>선형독립인 2개의 고유벡터를 구할 수 있으므로 기하적 중복도는 2이다.</strong></p>
+<p>이 경우 <span class="math inline">\(E_2\)</span> 는 두 개의 고유벡터 <span class="math inline">\(\pmb x_1, \pmb x_2\)</span> 가 생성하는 부분공간을 의미한다.</p>
+<p><span class="math display">\[
+E_2 = \text{span}\left\{\begin{bmatrix}-1 \\ 0 \\ 1\end{bmatrix}, \begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}\right\}
+\]</span></p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<hr>
+<p>이제 대수적 중복도와 기하적 중복도가 다른 경우에 대한 예제를 들어보자.</p>
+<hr>
+<div id="exr-Example-20-2" class="theorem exercise">
+<p><span class="theorem-title"><strong>예제 20.2 </strong></span>3차원 행렬 <span class="math inline">\(\pmb A\)</span> 가 다음과 같을 때</p>
+<p><span class="math display">\[\pmb A=\left[\begin{array}{ccc}1 &amp; 0 &amp; 2 \\ -1 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 2\end{array}\right]\]</span></p>
+<p>행렬 <span class="math inline">\(\pmb A\)</span>의 특성다항식은 다음과 같다.</p>
+<p><span class="math display">\[
+\operatorname{det}(\lambda \pmb I -\pmb A)=
+\left|\begin{array}{ccc}
+\lambda-1 &amp; 0 &amp; -2 \\
+1 &amp; \lambda-1 &amp; -3  \\
+0 &amp; 0 &amp; \lambda-2
+\end{array}\right|=(\lambda-1)^2(\lambda-2)
+\]</span> 첫번째 고유값은 <span class="math inline">\(\lambda_1=1\)</span> 이다. 고유벡터를 구하기 위해서는 다음과 같은 방정식을 풀면 된다.</p>
+<p><span class="math display">\[ (\lambda_1 \pmb I -\pmb A )\pmb x = \pmb 0  \]</span></p>
+<p>위의 방정식을 풀면</p>
+<p><span class="math display">\[
+(\lambda_1 \pmb I -\pmb A )\pmb x= (\pmb I -\pmb A )\pmb x =
+\begin{bmatrix}
+0 &amp; 0 &amp; -2 \\
+1 &amp; 0 &amp; -3 \\
+0 &amp; 0 &amp; -1
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+\end{bmatrix}
+\]</span></p>
+<p>아래와 같이 간단히 할 수 있으며</p>
+<p><span class="math display">\[ \quad x_1 = x_3 =0 \]</span> 다음과 같은 하나의 고유벡터를 얻을 수 있다.</p>
+<p><span class="math display">\[ \lambda_1=1 \quad \rightarrow \quad  x_1=\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \]</span></p>
+<p><strong>첫번째 고유값은 <span class="math inline">\(\lambda_1=1\)</span> 이며 대수적 중복도는 2이지만 기하적 중복도는 1이다.</strong> 이 경우 고유공간 <span class="math inline">\(E_1\)</span> 은 한 개의 고유벡터 <span class="math inline">\(\pmb x_1\)</span> 이 생성하는 부분공간을 의미한다.</p>
+<p><span class="math display">\[
+E_1 = \text{span}\left\{\begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix} \right\}
+\]</span></p>
+<p>다음으로 두번째 고유값에 대한 방정식 <span class="math inline">\((\lambda_2 \pmb I -\pmb A )\pmb x = \pmb 0\)</span> 을 풀면 다음과 같다.</p>
+<p><span class="math display">\[
+(\lambda_2 \pmb I -\pmb A )\pmb x= (2\pmb I -\pmb A )\pmb x =
+\begin{bmatrix}
+1 &amp; 0 &amp; 2 \\
+1 &amp; 1 &amp; -3 \\
+0 &amp; 0 &amp; 0
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+\end{bmatrix}
+\]</span></p>
+<p>이 방정식은 아래와 같이 간단히 할 수 있으며</p>
+<p><span class="math display">\[ x_1 = -2x_3, \quad x_2=5x_3  \]</span> 다음과 같은 한 개의 고유벡터를 얻을 수 있다.</p>
+<p><span class="math display">\[
+\lambda_2=2\quad \rightarrow \quad  x_2=\begin{bmatrix}-2 \\ 5 \\ 1\end{bmatrix}
+\]</span></p>
+<p>위에서 <strong>두번째 고유값은 <span class="math inline">\(\lambda_2=2\)</span> 이며 대수적 중복도는 1이다.</strong> 또한 <strong>선형독립인 1개의 고유벡터를 구할 수 있으므로 기하적 중복도는 1이다.</strong></p>
+<p>이 경우 <span class="math inline">\(E_2\)</span> 는 한 개의 고유벡터 <span class="math inline">\(\pmb x_2\)</span> 가 생성하는 부분공간을 의미한다.</p>
+<p><span class="math display">\[
+E_2 = \text{span}\left\{\begin{bmatrix}-2\\ 5 \\ 1\end{bmatrix}\right\}
+\]</span></p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<hr>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -782,10 +940,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../qmds/19_trace_det.html" class="pagination-link  aria-label=" &lt;span="" 대각합&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">행렬식과 대각합</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./qmds/01_schedule.html" class="pagination-link" aria-label="<span class='chapter-number'>1</span>&nbsp; <span class='chapter-title'>강의 일정과 내용</span>">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">강의 일정과 내용</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../qmds/21_eigen_value_02.html" class="pagination-link" aria-label="<span class='chapter-number'>21</span>&nbsp; <span class='chapter-title'>고유값과 고유벡터의 성질</span>">
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">고유값과 고유벡터의 성질</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
